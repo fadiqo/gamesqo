@@ -20,6 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+
 /* ═══════════════════════════════════════
    RESET & CUSTOM PROPERTIES
 ═══════════════════════════════════════ */
@@ -194,6 +195,149 @@ body{font-family:var(--font);background:var(--bg-base);color:var(--text);min-hei
 /* stars active */
 .gi-fbtn[data-s="5"].on{background:linear-gradient(135deg,var(--c5-top),var(--c5-bot))}
 .gi-fbtn[data-s="4"].on{background:linear-gradient(135deg,var(--c4-top),var(--c4-bot))}
+
+.gi-fbtn.gi-icon-only{
+  width:44px;height:44px;justify-content:center;padding:0;border-radius:14px;
+}
+.gi-ficon{font-size:18px;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+.gi-icon-img{
+  width:22px;height:22px;object-fit:contain;display:block;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.45));
+  pointer-events:none;
+}
+.gi-ftext{display:none}
+.gi-level-picker{
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.gi-level-label{
+  font-size:12px;
+  font-weight:700;
+  color:var(--text-dim);
+}
+.gi-select-wrap{
+  position:relative;
+}
+.gi-select-wrap::after{
+  content:"▾";
+  position:absolute;
+  inset-inline-end:12px;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--gold);
+  pointer-events:none;
+  font-size:12px;
+}
+.gi-level-select{
+  width:100%;
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.07);
+  color:#fff;
+  border-radius:12px;
+  padding:11px 34px 11px 12px;
+  font-family:var(--font);
+  font-size:14px;
+  outline:none;
+  cursor:pointer;
+}
+.gi-level-select:focus{
+  border-color:rgba(240,192,64,.35);
+  box-shadow:0 0 0 3px rgba(240,192,64,.12);
+}
+.gi-level-select option{
+  background:#111421;
+  color:#fff;
+}
+
+/* accordion headings */
+.gi-acc{border:0;background:transparent}
+.gi-acc > summary{list-style:none}
+.gi-acc > summary::-webkit-details-marker{display:none}
+.gi-acc-sum{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  cursor:pointer;padding:8px 0 10px;margin-bottom:8px;
+  color:var(--text);user-select:none
+}
+.gi-sum-ico{
+  width:28px;height:28px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  color:var(--gold);font-size:15px;flex-shrink:0
+}
+.gi-sum-arrow{
+  margin-inline-start:auto;color:var(--text-dim);font-size:18px;transition:transform .2s ease
+}
+.gi-acc[open] .gi-sum-arrow{transform:rotate(180deg)}
+
+/* talent calculator */
+.gi-talent-wrap{display:grid;gap:12px}
+.gi-talent-note{
+  display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:16px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:var(--text-dim)
+}
+.gi-talent-note-ico{
+  width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.08);color:var(--gold);flex-shrink:0
+}
+.gi-talent-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.gi-talent-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;padding:14px;overflow:hidden
+}
+.gi-talent-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.gi-tal-icon{
+  width:56px;height:56px;border-radius:50%;flex-shrink:0;overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);box-shadow:0 0 18px rgba(240,192,64,.18);
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+  display:flex;align-items:center;justify-content:center
+}
+.gi-tal-icon img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.gi-talent-name{flex:1;min-width:0}
+.gi-talent-name h4{font-size:14px;font-weight:900;color:#fff;line-height:1.3}
+.gi-talent-name p{font-size:12px;color:var(--text-dim);margin-top:2px}
+.gi-lvl-badge{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);font-size:12px;color:#fff
+}
+
+.gi-icon-filter{font-size:20px;margin-inline-end:6px}
+.gi-levels{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-top:10px}
+.gi-level-btn{padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);cursor:pointer}
+.gi-level-btn:hover,.gi-level-btn.active{background:rgba(240,192,64,.25)}
+
+.gi-range{
+  width:100%;accent-color:var(--gold);margin-top:10px
+}
+.gi-talent-meta{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:10px
+}
+.gi-mini{
+  padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
+  font-size:12px;color:var(--text)
+}
+.gi-cost-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px
+}
+@media(max-width:700px){.gi-cost-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.gi-cost{
+  padding:10px;border-radius:14px;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08)
+}
+.gi-cost b{display:block;font-size:11px;color:var(--gold);margin-bottom:4px}
+.gi-cost span{font-size:13px;color:var(--text)}
+.gi-bonus{
+  margin-top:10px;padding:10px 12px;border-radius:14px;background:rgba(160,120,32,.12);border:1px solid rgba(240,192,64,.18);font-size:12px;color:var(--text-dim)
+}
+.gi-passive-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+@media(max-width:700px){.gi-passive-grid{grid-template-columns:1fr}}
+.gi-passive{
+  padding:12px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)
+}
+.gi-passive h5{font-size:13px;font-weight:900;color:#fff;margin-bottom:4px}
+.gi-passive p{font-size:12px;line-height:1.8;color:var(--text-dim)}
 
 /* ═══════════════════════════════════════
    GRID HEADER
@@ -474,6 +618,415 @@ body{font-family:var(--font);background:var(--bg-base);color:var(--text);min-hei
 
 /* Loading shimmer for images */
 .gi-cimg[src*="placehold"]{opacity:.7}
+
+
+/* Dropdown polish */
+.gi-fgroup details{border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.04);padding:10px 12px}
+.gi-fgroup summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.gi-fgroup summary::-webkit-details-marker{display:none}
+.gi-drop-left{display:flex;align-items:center;gap:8px}
+.gi-drop-ico{width:28px;height:28px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);font-size:14px}
+.gi-drop-caret{opacity:.7;font-size:13px}
+.gi-fgroup details[open] .gi-drop-caret{transform:rotate(180deg)}
+.gi-fbtnrow{margin-top:10px}
+.gi-fbtn.gi-icon-only{width:42px;height:42px;min-width:42px;padding:0;justify-content:center;border-radius:12px}
+.gi-fbtn.gi-icon-only .gi-ficon{font-size:18px;line-height:1}
+.gi-fbtn.gi-icon-only .gi-ftext{display:none}
+.gi-fbtn.gi-icon-only:hover{transform:translateY(-1px)}
+.gi-talent-card{overflow:hidden}
+.gi-levels{grid-template-columns:repeat(5,1fr)}
+@media(max-width:700px){.gi-levels{grid-template-columns:repeat(5,1fr)}}
+.gi-level-btn{min-height:36px;font-weight:800}
+.gi-level-btn.active{background:linear-gradient(135deg,var(--gold),#9b6c12);color:#000;border-color:transparent}
+.gi-lvl-badge strong{font-variant-numeric:tabular-nums}
+.gi-mini{font-variant-numeric:tabular-nums}
+
+/* ═══════════════════════════════════════
+   GLASSMORPHISM UPGRADE
+═══════════════════════════════════════ */
+body{
+  background:
+    radial-gradient(circle at top right, rgba(160,120,32,.16), transparent 32%),
+    radial-gradient(circle at 18% 18%, rgba(107,64,173,.16), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(0,150,199,.12), transparent 26%),
+    var(--bg-base);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.08), transparent 28%),
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,.05), transparent 22%),
+    radial-gradient(circle at 45% 78%, rgba(255,255,255,.04), transparent 26%);
+  filter: blur(44px);
+  opacity:.7;
+  transform: translateZ(0);
+}
+.gi-header,
+.gi-countdown,
+.gi-filters,
+.gi-card,
+.gi-d-card,
+.gi-back-btn,
+.gi-ad{
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-color: rgba(255,255,255,.12);
+}
+.gi-header{box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.gi-card{
+  border-color: rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+}
+.gi-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(135deg, rgba(255,255,255,.12), transparent 38%, rgba(255,255,255,.04));
+  opacity:0;
+  transition: var(--trans);
+  pointer-events:none;
+}
+.gi-card:hover::after{opacity:1}
+.gi-filters,
+.gi-countdown,
+.gi-d-card,
+.gi-back-btn{
+  box-shadow: 0 18px 55px rgba(0,0,0,.22);
+}
+.gi-ad{
+  background: rgba(255,255,255,.04);
+}
+.gi-detail{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:none;
+  padding:14px;
+  background: rgba(3,6,14,.68);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow:auto;
+}
+.gi-detail.show{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+.gi-modal-wrap{
+  min-height:100%;
+  width:100%;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:14px 0 24px;
+}
+.gi-modal-card{
+  position:relative;
+  width:min(1120px,100%);
+  border-radius:24px;
+  overflow:hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow: 0 28px 90px rgba(0,0,0,.58);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.gi-modal-close{
+  position:absolute;
+  top:14px;
+  left:14px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:22px;
+  font-weight:900;
+  cursor:pointer;
+  z-index:5;
+}
+.gi-modal-close:hover{background:rgba(255,255,255,.18)}
+.gi-modal-body{padding:18px}
+.gi-section-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+@media(max-width:700px){
+  .gi-section-grid{grid-template-columns:1fr}
+}
+.gi-section-item,
+.gi-res-item{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:16px;
+  padding:12px;
+}
+.gi-section-kicker{
+  font-size:11px;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:6px;
+  font-weight:800;
+}
+.gi-section-title{
+  font-size:14px;
+  font-weight:800;
+  color:#fff;
+  margin-bottom:4px;
+}
+.gi-section-text{
+  font-size:13px;
+  line-height:1.9;
+  color:var(--text-dim);
+}
+.gi-pill-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.gi-pill{
+  padding:7px 11px;
+  border-radius:999px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+  font-size:12px;
+  color:#fff;
+}
+.gi-resource-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+@media(max-width:700px){
+  .gi-resource-grid{grid-template-columns:1fr}
+}
+.gi-res-key{
+  font-size:12px;
+  color:var(--gold);
+  font-weight:800;
+  margin-bottom:6px;
+}
+.gi-res-val{
+  font-size:13px;
+  line-height:1.8;
+  color:var(--text-dim);
+}
+.gi-modal-head .gi-d-hero{
+  margin-bottom:0;
+  border-radius:0;
+  border:none;
+}
+.gi-d-body{margin-top:18px}
+
+
+/* === Compact single-row filter bar === */
+.gi-filters{
+  padding:14px 14px 12px;
+}
+.gi-filter-bar{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  padding-bottom:4px;
+  -webkit-overflow-scrolling:touch;
+  flex-direction:row-reverse;
+}
+.gi-filter-bar::-webkit-scrollbar{height:5px}
+.gi-filter-bar::-webkit-scrollbar-thumb{background:rgba(240,192,64,.22);border-radius:999px}
+.gi-inline-group{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 !important;
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+.gi-inline-group .gi-flabel{
+  margin:0;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:12px;
+  color:var(--gold);
+  flex:0 0 auto;
+}
+.gi-stars-row{gap:6px}
+.gi-vsep{
+  width:1px;
+  height:30px;
+  background:rgba(255,255,255,.12);
+  flex:0 0 auto;
+  border-radius:999px;
+  opacity:.9;
+}
+#elem-filters,#weap-filters,#star-filters{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:6px;
+}
+.gi-fbtn.gi-icon-only{
+  width:40px;height:40px;min-width:40px;
+  border-radius:12px;
+}
+.gi-fbtn.gi-icon-only .gi-icon-img{
+  width:20px;height:20px;
+}
+.gi-fbtn[data-s]{
+  min-width:unset;
+  padding:5px 10px;
+  border-radius:12px;
+}
+@media(max-width:760px){
+  .gi-filter-bar{
+    direction:rtl;
+    padding-bottom:6px;
+  }
+  .gi-inline-group .gi-flabel{
+    font-size:11px;
+  }
+  .gi-vsep{
+    height:26px;
+  }
+}
+@media(max-width:560px){
+  .gi-filters{padding:12px}
+  .gi-filter-bar{gap:10px}
+  .gi-inline-group{gap:8px}
+  .gi-fbtn.gi-icon-only{
+    width:36px;height:36px;min-width:36px;border-radius:11px;
+  }
+  .gi-fbtn[data-s]{
+    padding:5px 9px;
+  }
+}
+
+</style>
+<style id="gi-editor-style">
+/* ═══════════════════════════════════════
+   SITE EDITOR v8 (GI) — UI
+═══════════════════════════════════════ */
+#gi-editor-toggle{
+  position:fixed;inset-inline-start:16px;bottom:16px;z-index:999999;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(15,16,30,.72);
+  color:#fff;font-family:var(--font);font-weight:900;font-size:13px;
+  cursor:pointer;user-select:none;
+  box-shadow:0 18px 55px rgba(0,0,0,.45);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+#gi-editor-toggle .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35)}
+#gi-editor-toggle.on .dot{background:var(--gold);box-shadow:0 0 12px var(--gold-glow)}
+#gi-editor-ui{
+  position:fixed;inset-inline-start:16px;bottom:72px;z-index:999999;
+  width:min(420px,calc(100vw - 32px));
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(10,12,24,.78);
+  color:#fff;
+  font-family:var(--font);
+  box-shadow:0 28px 90px rgba(0,0,0,.62);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  display:none;
+}
+#gi-editor-ui.show{display:block}
+#gi-editor-ui *{box-sizing:border-box}
+#gi-editor-ui .hdr{
+  padding:12px 12px 10px;
+  display:flex;align-items:center;gap:10px;
+  cursor:move;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+#gi-editor-ui .hdr .ttl{font-weight:900;font-size:13px}
+#gi-editor-ui .hdr .sub{margin-inline-start:auto;font-size:11px;color:rgba(255,255,255,.7)}
+#gi-editor-ui .hdr .x{
+  width:32px;height:32px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.08);
+  color:#fff;font-weight:900;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+}
+#gi-editor-ui .body{padding:12px;display:grid;gap:10px}
+#gi-editor-ui .row{display:grid;gap:6px}
+#gi-editor-ui label{font-size:11px;color:rgba(255,255,255,.75);font-weight:800}
+#gi-editor-ui input,#gi-editor-ui textarea,#gi-editor-ui select{
+  width:100%;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.25);
+  color:#fff;
+  padding:10px 12px;
+  font-family:var(--font);
+  outline:none;
+}
+#gi-editor-ui textarea{min-height:70px;resize:vertical}
+#gi-editor-ui .btns{display:flex;flex-wrap:wrap;gap:8px}
+#gi-editor-ui .btn{
+  flex:1;
+  min-width:calc(50% - 4px);
+  padding:10px 12px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.08);
+  color:#fff;font-family:var(--font);font-weight:900;
+  cursor:pointer;
+}
+#gi-editor-ui .btn:hover{background:rgba(255,255,255,.14)}
+#gi-editor-ui .btn.warn{background:rgba(255,68,68,.14);border-color:rgba(255,68,68,.28)}
+#gi-editor-ui .btn.gold{background:rgba(240,192,64,.18);border-color:rgba(240,192,64,.28)}
+#gi-editor-ui .mini{font-size:11px;color:rgba(255,255,255,.72);line-height:1.8}
+#gi-editor-ui .chips{display:flex;flex-wrap:wrap;gap:6px}
+#gi-editor-ui .chip{
+  padding:6px 10px;border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:11px;color:#fff;
+  max-width:100%;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+#gi-editor-overlay{
+  position:fixed;z-index:999998;pointer-events:none;
+  border:2px solid rgba(240,192,64,.9);
+  border-radius:10px;
+  box-shadow:0 0 0 2px rgba(0,0,0,.35),0 0 22px rgba(240,192,64,.2);
+  display:none;
+}
+#gi-editor-overlay.show{display:block}
+#gi-editor-overlay .h{
+  position:absolute;width:10px;height:10px;border-radius:3px;
+  background:rgba(240,192,64,.95);
+  border:1px solid rgba(0,0,0,.45);
+  pointer-events:auto;
+}
+#gi-editor-overlay .h.nw{top:-6px;left:-6px;cursor:nwse-resize}
+#gi-editor-overlay .h.ne{top:-6px;right:-6px;cursor:nesw-resize}
+#gi-editor-overlay .h.sw{bottom:-6px;left:-6px;cursor:nesw-resize}
+#gi-editor-overlay .h.se{bottom:-6px;right:-6px;cursor:nwse-resize}
+#gi-editor-overlay .h.n{top:-6px;left:50%;transform:translateX(-50%);cursor:ns-resize}
+#gi-editor-overlay .h.s{bottom:-6px;left:50%;transform:translateX(-50%);cursor:ns-resize}
+#gi-editor-overlay .h.w{left:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+#gi-editor-overlay .h.e{right:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+#gi-editor-toast{
+  position:fixed;top:18px;left:18px;z-index:1000000;
+  padding:10px 12px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(0,0,0,.55);
+  color:#fff;font-family:var(--font);font-weight:800;font-size:12px;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  display:none;
+}
+#gi-editor-toast.show{display:block}
 </style>
 </head>
 <body>
@@ -546,25 +1099,31 @@ body{font-family:var(--font);background:var(--bg-base);color:var(--text);min-hei
         <button class="gi-btn-clear" onclick="clearAll()" id="btn-clearall">مسح الكل</button>
       </div>
 
-      <div class="gi-fgroup">
-        <div class="gi-flabel" id="lbl-elements">العناصر</div>
-        <div class="gi-fbtnrow" id="elem-filters"></div>
-      </div>
+      <div class="gi-filter-bar" aria-label="الفلاتر">
+        <div class="gi-fgroup gi-inline-group">
+          <div class="gi-flabel" id="lbl-elements"><span id="lbl-elements-text">العناصر</span></div>
+          <div class="gi-fbtnrow" id="elem-filters"></div>
+        </div>
 
-      <div class="gi-fgroup">
-        <div class="gi-flabel" id="lbl-weapons">الأسلحة</div>
-        <div class="gi-fbtnrow" id="weap-filters"></div>
-      </div>
+        <span class="gi-vsep" aria-hidden="true"></span>
 
-      <div class="gi-fgroup">
-        <div class="gi-flabel" id="lbl-stars">النجوم</div>
-        <div class="gi-fbtnrow" id="star-filters">
-          <button class="gi-fbtn" data-s="5" onclick="toggleFilter('stars',5)" id="sbtn5">
-            <span>★★★★★</span> <span id="s5lbl">5 نجوم</span>
-          </button>
-          <button class="gi-fbtn" data-s="4" onclick="toggleFilter('stars',4)" id="sbtn4">
-            <span>★★★★</span> <span id="s4lbl">4 نجوم</span>
-          </button>
+        <div class="gi-fgroup gi-inline-group">
+          <div class="gi-flabel" id="lbl-weapons"><span id="lbl-weapons-text">الأسلحة</span></div>
+          <div class="gi-fbtnrow" id="weap-filters"></div>
+        </div>
+
+        <span class="gi-vsep" aria-hidden="true"></span>
+
+        <div class="gi-fgroup gi-inline-group">
+          <div class="gi-flabel"><span id="lbl-stars-text">النجوم</span></div>
+          <div class="gi-fbtnrow gi-stars-row" id="star-filters">
+            <button class="gi-fbtn" data-s="5" onclick="toggleFilter('stars',5)" id="sbtn5">
+              <span>★★★★★</span> <span id="s5lbl">5 نجوم</span>
+            </button>
+            <button class="gi-fbtn" data-s="4" onclick="toggleFilter('stars',4)" id="sbtn4">
+              <span>★★★★</span> <span id="s4lbl">4 نجوم</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -579,8 +1138,8 @@ body{font-family:var(--font);background:var(--bg-base);color:var(--text);min-hei
     <!-- PAGINATION -->
     <div class="gi-pagination">
       <button class="gi-pgbtn arr" id="pg-prev" onclick="changePg(-1)" disabled>&#8250;</button>
-      <button class="gi-pgbtn on" id="pg-1" onclick="goPage(1)">١</button>
-      <button class="gi-pgbtn" id="pg-2" onclick="goPage(2)">٢</button>
+      <button class="gi-pgbtn on" id="pg-1" onclick="goPage(1)">1</button>
+      <button class="gi-pgbtn" id="pg-2" onclick="goPage(2)">2</button>
       <button class="gi-pgbtn arr" id="pg-next" onclick="changePg(1)">&#8249;</button>
     </div>
 
@@ -688,20 +1247,20 @@ const T = {
    ELEMENT & WEAPON DEFINITIONS
    ══════════════════════════════════════════════════════ */
 const ELEMENTS = [
-  {id:"geo",    ar:"الحجر",    en:"Geo",     icon:"⬡",  color:"#a07820"},
-  {id:"pyro",   ar:"النار",    en:"Pyro",    icon:"🔥", color:"#b52b27"},
-  {id:"hydro",  ar:"الماء",    en:"Hydro",   icon:"💧", color:"#1565c0"},
-  {id:"electro",ar:"الكهرباء",en:"Electro", icon:"⚡", color:"#6a0dad"},
-  {id:"cryo",   ar:"الثلج",    en:"Cryo",    icon:"❄",  color:"#0096c7"},
-  {id:"dendro", ar:"النبات",   en:"Dendro",  icon:"🌿", color:"#2d8a2d"},
-  {id:"anemo",  ar:"الهواء",   en:"Anemo",   icon:"🌀", color:"#00897b"},
+  {id:"geo",     ar:"الحجر",    en:"Geo",     icon:"⬡", iconImg:"", color:"#a07820"},
+  {id:"pyro",    ar:"النار",    en:"Pyro",    icon:"🔥", iconImg:"", color:"#b52b27"},
+  {id:"hydro",   ar:"الماء",    en:"Hydro",   icon:"💧", iconImg:"", color:"#1565c0"},
+  {id:"electro", ar:"الكهرباء", en:"Electro", icon:"⚡", iconImg:"", color:"#6a0dad"},
+  {id:"cryo",    ar:"الثلج",    en:"Cryo",    icon:"❄", iconImg:"", color:"#0096c7"},
+  {id:"dendro",  ar:"النبات",   en:"Dendro",  icon:"🌿", iconImg:"", color:"#2d8a2d"},
+  {id:"anemo",   ar:"الهواء",   en:"Anemo",   icon:"🌀", iconImg:"", color:"#00897b"},
 ];
 const WEAPONS = [
-  {id:"sword",   ar:"سيف خفيف", en:"Sword",    icon:"⚔"},
-  {id:"claymore",ar:"سيف ثقيل", en:"Claymore", icon:"🗡"},
-  {id:"bow",     ar:"قوس",      en:"Bow",      icon:"🏹"},
-  {id:"catalyst",ar:"كتاب",     en:"Catalyst", icon:"📖"},
-  {id:"polearm", ar:"رمح",      en:"Polearm",  icon:"✦"},
+  {id:"sword",    ar:"سيف خفيف", en:"Sword",    icon:"⚔", iconImg:""},
+  {id:"claymore", ar:"سيف ثقيل", en:"Claymore", icon:"🗡", iconImg:""},
+  {id:"bow",      ar:"قوس",      en:"Bow",      icon:"🏹", iconImg:""},
+  {id:"catalyst", ar:"كتاب",     en:"Catalyst", icon:"📖", iconImg:""},
+  {id:"polearm",  ar:"رمح",      en:"Polearm",  icon:"✦", iconImg:""},
 ];
 
 /* ══════════════════════════════════════════════════════
@@ -725,6 +1284,59 @@ const CHARS = [
     iconRight:"https://placehold.co/52x52/2c5f8a/ffffff?text=⚔",
     descAr:"محاربة أسطورية من أراضي الحجارة الصلدة، تمتلك قدرات نادرة في التحكم بقوة الجيو. ذات شخصية هادئة وحكيمة، لكنها لا تتردد في القتال حين يكون ذلك ضرورياً. يُقال إن سيفها يشق الصخور بمفرده.",
     descEn:"A legendary warrior from the stone lands, possessing rare abilities to control the power of Geo. Calm and wise by nature, yet never hesitant when battle is necessary. Legend says her blade alone can cleave solid rock.",
+    constellationDetails:{
+      ar:[
+        {title:"C1 — صدى الطبقات", desc:"تعزز الدرع الصخري وتمنح ارتداداً أقوى عند الهجوم."},
+        {title:"C2 — قلب الجبل", desc:"تزيد ثبات القتال وتقلل التراجع أثناء التنفيذ."},
+        {title:"C3 — نصل الأركان", desc:"ترفع مستوى المهارة الأساسية بشكل ملحوظ."},
+        {title:"C4 — نبض الصخور", desc:"تمنح دفعة إضافية للطاقة بعد استخدام الانفجار."},
+        {title:"C5 — تاج التكوين", desc:"ترفع مستوى الانفجار وتزيد ضرره الإجمالي."},
+        {title:"C6 — إرادة الجيود", desc:"تحول الدفاع إلى هجوم وتُطيل زمن التمركز القتالي."}
+      ],
+      en:[
+        {title:"C1 — Echo of Layers", desc:"Fortifies the stone shield and boosts counter impact."},
+        {title:"C2 — Heart of the Mountain", desc:"Improves combat stability and reduces interruption."},
+        {title:"C3 — Blade of Arches", desc:"Greatly raises the level of the elemental skill."},
+        {title:"C4 — Pulse of Stone", desc:"Grants extra energy after using the burst."},
+        {title:"C5 — Crown of Formation", desc:"Raises burst level and overall damage."},
+        {title:"C6 — Geo Will", desc:"Turns defense into offense and extends field time."}
+      ]
+    },
+    talentsData:{
+      ar:[
+        {title:"الهجوم العادي", desc:"سلسلة ضربات حجرية متتالية تنتهي بضربة ثقيلة."},
+        {title:"المهارة العنصرية", desc:"شق أرضي يخلق موجة صخرية ويمنح أفضلية دفاعية."},
+        {title:"الانفجار العنصري", desc:"تاج من الشظايا ينهال على الخصوم بقوة عالية."},
+        {title:"الموهبة السلبية 1", desc:"ترفع الاستقرار وتزيد فعالية الدعم القتالي."},
+        {title:"الموهبة السلبية 2", desc:"تستعيد جزءاً من الطاقة عند كسر الحواجز."}
+      ],
+      en:[
+        {title:"Normal Attack", desc:"A chain of stone strikes ending with a heavy hit."},
+        {title:"Elemental Skill", desc:"A ground split that creates a rocky wave and defensive edge."},
+        {title:"Elemental Burst", desc:"A crown of shards rains down with heavy force."},
+        {title:"Passive Talent 1", desc:"Improves stability and enhances combat support."},
+        {title:"Passive Talent 2", desc:"Restores part of energy when shields are broken."}
+      ]
+    },
+    devResourcesData:{
+      ar:{
+        specialty:"زهرة الصخور",
+        boss:"قلب الجيود",
+        weekly:"بلورة التكوين",
+        gems:"شظايا / قطع / كتل Geo",
+        book:"تعاليم الثبات",
+        enemy:"رقائق الحرس الحجري"
+      },
+      en:{
+        specialty:"Rock Bloom",
+        boss:"Geode Core",
+        weekly:"Formation Crystal",
+        gems:"Geo shards / fragments / chunks",
+        book:"Teachings of Steadfastness",
+        enemy:"Stone Guard Fragments"
+      }
+    },
+
   },
   {
     id:2,page:1,stars:5,element:"hydro",weapon:"sword",
@@ -739,6 +1351,59 @@ const CHARS = [
     iconRight:"https://placehold.co/52x52/2c5f8a/ffffff?text=⚔",
     descAr:"فورينا أرخون الماء وحاكمة فونتين بابتسامتها اللامعة. خلف واجهتها المبهجة والمسرحية تكمن أسرار عميقة وثقيلة. قوتها في السيطرة على الماء لا مثيل لها في تيفات.",
     descEn:"Furina, the Hydro Archon ruling Fontaine with her dazzling smile. Behind her theatrical facade lie deep and heavy secrets. Her mastery over water is unparalleled throughout Teyvat.",
+    constellationDetails:{
+      ar:[
+        {title:"C1 — موجة المسرح", desc:"تزيد حضورها وتأثيرها عند بدء القتال."},
+        {title:"C2 — ضوء القصر", desc:"ترفع التوازن بين الشفاء والسيطرة على الماء."},
+        {title:"C3 — ابتسامة الأركون", desc:"ترفع مستوى المهارة الأساسية بشكل كبير."},
+        {title:"C4 — ستارة الأمواج", desc:"تزيد مدة التأثيرات المائية وتقلل الفجوات."},
+        {title:"C5 — نبض الأوبرا", desc:"ترفع مستوى الانفجار وتزيد الإيقاع الهجومي."},
+        {title:"C6 — عرش البحيرة", desc:"تمنح ذروة قوة إضافية في لحظات الحسم."}
+      ],
+      en:[
+        {title:"C1 — Stage Tide", desc:"Increases presence and impact at battle start."},
+        {title:"C2 — Palace Light", desc:"Raises the balance between healing and hydro control."},
+        {title:"C3 — Archon Smile", desc:"Greatly raises the level of the skill."},
+        {title:"C4 — Curtain of Waves", desc:"Extends hydro effects and reduces downtime."},
+        {title:"C5 — Opera Pulse", desc:"Raises burst level and boosts attack rhythm."},
+        {title:"C6 — Lake Throne", desc:"Provides a final peak of power in decisive moments."}
+      ]
+    },
+    talentsData:{
+      ar:[
+        {title:"الهجوم العادي", desc:"حركات سريعة وأنيقة ترافقها تموجات مائية."},
+        {title:"المهارة العنصرية", desc:"استدعاء مسرحي يطلق طاقة الماء مع لمسة مبهرة."},
+        {title:"الانفجار العنصري", desc:"عرض ملكي يغمر الساحة بقوة هيدرو مكثفة."},
+        {title:"الموهبة السلبية 1", desc:"تحسن التفاعل مع الزملاء وتزيد المرونة."},
+        {title:"الموهبة السلبية 2", desc:"تمنح شحنات إضافية بعد التحكم المثالي بالهجوم."}
+      ],
+      en:[
+        {title:"Normal Attack", desc:"Swift elegant motions accompanied by hydro ripples."},
+        {title:"Elemental Skill", desc:"A theatrical summon that releases dazzling water power."},
+        {title:"Elemental Burst", desc:"A royal performance that floods the field with hydro force."},
+        {title:"Passive Talent 1", desc:"Improves synergy with teammates and boosts flexibility."},
+        {title:"Passive Talent 2", desc:"Grants extra charge after a perfect attack sequence."}
+      ]
+    },
+    devResourcesData:{
+      ar:{
+        specialty:"زنبقة الماء",
+        boss:"مرآة المد",
+        weekly:"لحن السواحل",
+        gems:"شظايا / قطع / كتل Hydro",
+        book:"تعاليم المسرح",
+        enemy:"شظايا الحرس المائي"
+      },
+      en:{
+        specialty:"Water Lily",
+        boss:"Tide Mirror",
+        weekly:"Coastal Melody",
+        gems:"Hydro shards / fragments / chunks",
+        book:"Teachings of Theater",
+        enemy:"Water Guard Fragments"
+      }
+    },
+
   },
   {
     id:3,page:1,stars:5,element:"hydro",weapon:"catalyst",
@@ -753,6 +1418,59 @@ const CHARS = [
     iconRight:"https://placehold.co/52x52/6b2a6b/ffffff?text=📖",
     descAr:"نيوفيليت هو قاضي الأعلى في فونتين، يتمتع بسلطة مطلقة على العدالة. مظهره البارد والرصين يخفي قلباً يسعى للحقيقة أكثر من أي شيء. كاتالوجه يستدعي قوة الأمطار الكبرى.",
     descEn:"Neuvillette, the Chief Justice of Fontaine, holds absolute authority over justice. His cold, composed exterior hides a heart that seeks truth above all else. His catalyst summons the power of the great rains.",
+    constellationDetails:{
+      ar:[
+        {title:"C1 — مرسوم العدالة", desc:"تزيد دقة الاستدعاء المائي وتمنح سيطرة أفضل."},
+        {title:"C2 — عين الأمطار", desc:"ترفع استقرار الضربات وتوسع مساحة التأثير."},
+        {title:"C3 — قوس الحكم", desc:"ترفع مستوى المهارة الأساسية بشكل ملحوظ."},
+        {title:"C4 — لحن القصر", desc:"تزيد سرعة الاستجابة وتخفف فترات التعطيل."},
+        {title:"C5 — ختم البحر", desc:"ترفع مستوى الانفجار وتدعم الضرر المتكرر."},
+        {title:"C6 — تاج المحيط", desc:"تحول الاستدعاء النهائي إلى ذروة قوة نادرة."}
+      ],
+      en:[
+        {title:"C1 — Edict of Justice", desc:"Improves hydro summons and grants better control."},
+        {title:"C2 — Eye of Rain", desc:"Raises hit stability and expands the effect area."},
+        {title:"C3 — Arch of Judgment", desc:"Substantially raises the skill level."},
+        {title:"C4 — Palace Melody", desc:"Improves response speed and reduces downtime."},
+        {title:"C5 — Seal of the Sea", desc:"Raises burst level and supports repeated damage."},
+        {title:"C6 — Ocean Crown", desc:"Turns the final summon into a rare peak of power."}
+      ]
+    },
+    talentsData:{
+      ar:[
+        {title:"الهجوم العادي", desc:"سلسلة هادئة دقيقة تستدعي الأمطار عند الضربة الأخيرة."},
+        {title:"المهارة العنصرية", desc:"أمواج مركزة تضرب الخصم وتعيد تشكيل الساحة."},
+        {title:"الانفجار العنصري", desc:"استدعاء ضخم للأمطار يملأ الأرض بالقوة."},
+        {title:"الموهبة السلبية 1", desc:"تعزز الحكم الذاتي وتزيد كفاءة الماء."},
+        {title:"الموهبة السلبية 2", desc:"تعيد بعض الطاقة عند تحقيق الضربات الحاسمة."}
+      ],
+      en:[
+        {title:"Normal Attack", desc:"A precise calm chain that summons rain on the final strike."},
+        {title:"Elemental Skill", desc:"Focused waves hit enemies and reshape the field."},
+        {title:"Elemental Burst", desc:"A massive rain summon that fills the area with power."},
+        {title:"Passive Talent 1", desc:"Boosts self-control and hydro efficiency."},
+        {title:"Passive Talent 2", desc:"Restores energy on landing critical hits."}
+      ]
+    },
+    devResourcesData:{
+      ar:{
+        specialty:"زهرة الغيث",
+        boss:"نبع الأمطار الكبرى",
+        weekly:"ميزان المحيط",
+        gems:"شظايا / قطع / كتل Hydro",
+        book:"تعاليم العدالة",
+        enemy:"شظايا الحرس الأمري"
+      },
+      en:{
+        specialty:"Rain Blossom",
+        boss:"Great Rain Spring",
+        weekly:"Ocean Scale",
+        gems:"Hydro shards / fragments / chunks",
+        book:"Teachings of Justice",
+        enemy:"Aqua Guard Fragments"
+      }
+    },
+
   },
   {
     id:4,page:1,stars:5,element:"pyro",weapon:"bow",
@@ -1023,21 +1741,40 @@ const getImgFallback = (c) => {
   return `https://placehold.co/200x250/${colorMap[c.element]||'333/aaa'}?text=${encodeURIComponent(c.nameEn)}`;
 };
 
+const escHtml = (s) => String(s ?? '')
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#39;');
+
+const jsString = (s) => JSON.stringify(String(s ?? ''));
+
+function renderIconAsset(src, fallback, alt = '') {
+  const safeFallback = String(fallback ?? '');
+  const safeAlt = String(alt || safeFallback);
+  const safeSrc = String(src ?? '').trim();
+  if (safeSrc) {
+    return `<img class="gi-icon-img" src="${escHtml(safeSrc)}" alt="${escHtml(safeAlt)}" loading="lazy" onerror="this.onerror=null;const s=document.createElement('span');s.className='gi-ficon';s.setAttribute('aria-hidden','true');s.textContent=${jsString(safeFallback)};this.replaceWith(s)">`;
+  }
+  return `<span class="gi-ficon" aria-hidden="true">${escHtml(safeFallback)}</span>`;
+}
+
 /* ══════════════════════════════════════════════════════
    FILTER BUTTONS INIT
    ══════════════════════════════════════════════════════ */
 function buildFilters() {
   const ef = el('elem-filters');
   ef.innerHTML = ELEMENTS.map(e =>
-    `<button class="gi-fbtn" data-e="${e.id}" onclick="toggleFilter('element','${e.id}')" id="ef-${e.id}">
-       <span>${e.icon}</span><span id="eln-${e.id}">${state.lang==='ar'?e.ar:e.en}</span>
+    `<button class="gi-fbtn gi-icon-only" data-e="${e.id}" onclick="toggleFilter('element','${e.id}')" id="ef-${e.id}" title="${state.lang==='ar' ? e.ar : e.en}" aria-label="${state.lang==='ar' ? e.ar : e.en}">
+       ${renderIconAsset(e.iconImg, e.icon, state.lang==='ar' ? e.ar : e.en)}
      </button>`
   ).join('');
 
   const wf = el('weap-filters');
   wf.innerHTML = WEAPONS.map(w =>
-    `<button class="gi-fbtn" data-w="${w.id}" onclick="toggleFilter('weapon','${w.id}')" id="wf-${w.id}">
-       <span>${w.icon}</span><span id="wln-${w.id}">${state.lang==='ar'?w.ar:w.en}</span>
+    `<button class="gi-fbtn gi-icon-only" data-w="${w.id}" onclick="toggleFilter('weapon','${w.id}')" id="wf-${w.id}" title="${state.lang==='ar' ? w.ar : w.en}" aria-label="${state.lang==='ar' ? w.ar : w.en}">
+       ${renderIconAsset(w.iconImg, w.icon, state.lang==='ar' ? w.ar : w.en)}
      </button>`
   ).join('');
 }
@@ -1055,16 +1792,25 @@ function toggleFilter(type, val) {
   }
   renderFilterBtns();
   renderGrid();
+  forceEnglishDigits(document.body);
 }
 
 function renderFilterBtns() {
   ELEMENTS.forEach(e => {
     const b = el(`ef-${e.id}`);
-    if (b) b.classList.toggle('on', state.filters.element === e.id);
+    if (b) {
+      b.classList.toggle('on', state.filters.element === e.id);
+      b.title = state.lang === 'ar' ? e.ar : e.en;
+      b.setAttribute('aria-label', state.lang === 'ar' ? e.ar : e.en);
+    }
   });
   WEAPONS.forEach(w => {
     const b = el(`wf-${w.id}`);
-    if (b) b.classList.toggle('on', state.filters.weapon === w.id);
+    if (b) {
+      b.classList.toggle('on', state.filters.weapon === w.id);
+      b.title = state.lang === 'ar' ? w.ar : w.en;
+      b.setAttribute('aria-label', state.lang === 'ar' ? w.ar : w.en);
+    }
   });
   const s5 = el('sbtn5'), s4 = el('sbtn4');
   if (s5) s5.classList.toggle('on', state.filters.stars === 5);
@@ -1078,6 +1824,7 @@ function clearAll() {
   if (si) si.value = '';
   renderFilterBtns();
   renderGrid();
+  forceEnglishDigits(document.body);
 }
 
 let searchTimer;
@@ -1129,6 +1876,7 @@ function renderGrid() {
 
   grid.innerHTML = chars.map(c => buildCard(c)).join('');
   updatePageBtns();
+  forceEnglishDigits(grid);
 }
 
 function buildCard(c) {
@@ -1172,6 +1920,7 @@ function goPage(n) {
   state.page = n;
   window.scrollTo({top:0,behavior:'smooth'});
   renderGrid();
+  forceEnglishDigits(document.body);
 }
 
 function changePg(d) {
@@ -1182,6 +1931,209 @@ function changePg(d) {
 /* ══════════════════════════════════════════════════════
    DETAIL VIEW
    ══════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════
+   TALENT CALCULATOR
+   ══════════════════════════════════════════════════════ */
+const TALENT_STEPS = [
+  { books:[3,0,0], common:6, weekly:0, crown:0, mora:12500 },
+  { books:[0,2,0], common:3, weekly:0, crown:0, mora:17500 },
+  { books:[0,4,0], common:4, weekly:0, crown:0, mora:25000 },
+  { books:[0,6,0], common:6, weekly:0, crown:0, mora:30000 },
+  { books:[0,9,0], common:9, weekly:0, crown:0, mora:37500 },
+  { books:[0,0,4], common:4, weekly:1, crown:0, mora:120000 },
+  { books:[0,0,6], common:6, weekly:1, crown:0, mora:260000 },
+  { books:[0,0,12], common:9, weekly:2, crown:0, mora:450000 },
+  { books:[0,0,16], common:12, weekly:2, crown:1, mora:700000 },
+];
+
+function makeTalentIcon(label, accent) {
+  const txt = String(label || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const a = accent || '#f0c040';
+  const svg = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+    <defs>
+      <radialGradient id="g" cx="35%" cy="25%" r="75%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity=".26"/>
+        <stop offset="60%" stop-color="${a}" stop-opacity=".98"/>
+        <stop offset="100%" stop-color="#0b0b18" stop-opacity="1"/>
+      </radialGradient>
+    </defs>
+    <circle cx="60" cy="60" r="59" fill="url(#g)" />
+    <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,.34)" stroke-width="2"/>
+    <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle"
+          fill="#fff" font-size="22" font-family="Arial, sans-serif" font-weight="700">${txt}</text>
+  </svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function talentLevelSummary(targetLevel) {
+  const lvl = Math.max(0, Math.min(15, Number(targetLevel) || 0));
+  const steps = Math.max(0, Math.min(lvl, 10) - 1);
+  const totals = { books:[0,0,0], common:0, weekly:0, crown:0, mora:0 };
+  for (let i = 0; i < steps; i++) {
+    const s = TALENT_STEPS[i];
+    totals.books[0] += s.books[0];
+    totals.books[1] += s.books[1];
+    totals.books[2] += s.books[2];
+    totals.common += s.common;
+    totals.weekly += s.weekly;
+    totals.crown += s.crown;
+    totals.mora += s.mora;
+  }
+  return { level: lvl, steps, totals, bonus: Math.max(0, lvl - 10) };
+}
+
+function fmtMat(n) {
+  return Number(n).toLocaleString('en-US');
+}
+
+function normalizeDigits(str) {
+  return String(str)
+    .replace(/[٠-٩]/g, d => '٠12٣٤٥٦٧٨٩'.indexOf(d))
+    .replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+}
+
+function forceEnglishDigits(root = document.body) {
+  if (!root) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    if (!node.parentElement) return;
+    const tag = node.parentElement.tagName;
+    if (['SCRIPT','STYLE','TEXTAREA','INPUT'].includes(tag)) return;
+    const next = normalizeDigits(node.nodeValue);
+    if (next !== node.nodeValue) node.nodeValue = next;
+  });
+}
+
+function levelPills(current) {
+  const lvl = Math.max(0, Math.min(15, Number(current) || 0));
+  let out = '';
+  for (let i = 0; i <= 15; i++) {
+    const style = i === lvl ? 'background:rgba(240,192,64,.22);border-color:rgba(240,192,64,.35);color:#fff' : '';
+    out += `<span class="gi-mini" style="${style}">${i}</span>`;
+  }
+  return out;
+}
+
+function sectionTitle(icon, label) {
+  return `<div class="gi-d-card-title">${icon} ${label}</div>`;
+}
+
+
+function buildTalentLevelCard(c, talent, idx, accent) {
+  const title = talent.title || '';
+  const desc = talent.desc || '';
+  const iconText = idx === 0 ? 'NA' : idx === 1 ? 'ES' : 'Q';
+  const icon = makeTalentIcon(iconText, accent);
+  const baseId = `tal-${c.id}-${idx}`;
+  const lvlId = `tallvl-${c.id}-${idx}`;
+  const booksId = `talbooks-${c.id}-${idx}`;
+  const commonId = `talcommon-${c.id}-${idx}`;
+  const weeklyId = `talweekly-${c.id}-${idx}`;
+  const crownId = `talcrown-${c.id}-${idx}`;
+  const moraId = `talmora-${c.id}-${idx}`;
+  const bonusId = `talbonus-${c.id}-${idx}`;
+  const options = Array.from({length: 16}, (_, n) => {
+    const selected = n === 0 ? ' selected' : '';
+    return `<option value="${n}"${selected}>${n}</option>`;
+  }).join('');
+  return `
+    <div class="gi-talent-card" data-tal-card="${baseId}">
+      <div class="gi-talent-head">
+        <div class="gi-tal-icon"><img src="${icon}" alt="${title}"></div>
+        <div class="gi-talent-name">
+          <h4>${title}</h4>
+          <p>${desc}</p>
+        </div>
+        <div class="gi-lvl-badge"><span>Lv</span><strong id="${lvlId}">0</strong><span>/15</span></div>
+      </div>
+
+      <div class="gi-level-picker">
+        <label class="gi-level-label" for="${baseId}-select">${state.lang === 'ar' ? 'اختر المستوى' : 'Choose level'}</label>
+        <div class="gi-select-wrap">
+          <select class="gi-level-select" id="${baseId}-select" onchange="updateTalentCard(${c.id}, ${idx}, this.value)">
+            ${options}
+          </select>
+        </div>
+      </div>
+
+      <div class="gi-talent-meta">
+        <span class="gi-mini">0 → 15</span>
+        <span class="gi-mini">${state.lang === 'ar' ? 'نظام Genshin' : 'Genshin-style system'}</span>
+      </div>
+      <div class="gi-cost-grid">
+        <div class="gi-cost"><b>${state.lang === 'ar' ? 'كتب الموهبة' : 'Talent Books'}</b><span id="${booksId}">0 / 0 / 0</span></div>
+        <div class="gi-cost"><b>${state.lang === 'ar' ? 'مواد الأعداء' : 'Enemy Mats'}</b><span id="${commonId}">0</span></div>
+        <div class="gi-cost"><b>${state.lang === 'ar' ? 'مواد الزعيم' : 'Weekly Boss'}</b><span id="${weeklyId}">0</span></div>
+        <div class="gi-cost"><b>${state.lang === 'ar' ? 'التاج' : 'Crown'}</b><span id="${crownId}">0</span></div>
+        <div class="gi-cost"><b>${state.lang === 'ar' ? 'المورا' : 'Mora'}</b><span id="${moraId}">0</span></div>
+      </div>
+      <div class="gi-bonus" id="${bonusId}">${state.lang === 'ar' ? 'المستويات 11 → 15 مكافأة فقط ولا تحتاج مواد.' : 'Levels 11 → 15 are bonus only and do not need materials.'}</div>
+      <div class="gi-talent-meta" style="margin-top:10px">${levelPills(0)}</div>
+    </div>
+  `;
+}
+
+function buildTalentSystemSection(c, talents, accent) {
+  const levelable = talents.slice(0, 3);
+  const passives = talents.slice(3);
+  const cards = levelable.map((t, idx) => buildTalentLevelCard(c, t, idx, accent)).join('');
+  const passiveCards = passives.length ? `
+    <div class="gi-passive-grid">
+      ${passives.map((t) => `
+        <div class="gi-passive">
+          <h5>${t.title}</h5>
+          <p>${t.desc}</p>
+        </div>
+      `).join('')}
+    </div>` : '';
+  return `
+    <div class="gi-d-card gi-d-full">
+      ${sectionTitle('🎯', state.lang === 'ar' ? 'المواهب' : 'Talents')}
+      <div class="gi-talent-wrap">
+        <div class="gi-talent-note">
+          <div class="gi-talent-note-ico">ⓘ</div>
+          <div>${state.lang === 'ar'
+            ? 'اختر المستوى من 0 إلى 15، وستظهر تكلفة الترقية بنظام جنشن الحقيقي. المستويات 11 → 15 مكافأة فقط.'
+            : 'Choose a level from 0 to 15. The upgrade cost follows Genshin-style progression. Levels 11 → 15 are bonus only.'}</div>
+        </div>
+        <div class="gi-talent-grid">${cards}</div>
+        ${passiveCards}
+      </div>
+    </div>
+  `;
+}
+
+
+function updateTalentCard(charId, idx, value) {
+  const lvl = Math.max(0, Math.min(15, parseInt(value, 10) || 0));
+  const summary = talentLevelSummary(lvl);
+  const baseId = `tal-${charId}-${idx}`;
+  const lvlEl = document.getElementById(`tallvl-${charId}-${idx}`);
+  const booksEl = document.getElementById(`talbooks-${charId}-${idx}`);
+  const commonEl = document.getElementById(`talcommon-${charId}-${idx}`);
+  const weeklyEl = document.getElementById(`talweekly-${charId}-${idx}`);
+  const crownEl = document.getElementById(`talcrown-${charId}-${idx}`);
+  const moraEl = document.getElementById(`talmora-${charId}-${idx}`);
+  const bonusEl = document.getElementById(`talbonus-${charId}-${idx}`);
+  const selectEl = document.getElementById(`${baseId}-select`);
+  if (lvlEl) lvlEl.textContent = String(lvl);
+  if (selectEl) selectEl.value = String(lvl);
+
+  if (booksEl) booksEl.textContent = `${fmtMat(summary.totals.books[0])} / ${fmtMat(summary.totals.books[1])} / ${fmtMat(summary.totals.books[2])}`;
+  if (commonEl) commonEl.textContent = fmtMat(summary.totals.common);
+  if (weeklyEl) weeklyEl.textContent = fmtMat(summary.totals.weekly);
+  if (crownEl) crownEl.textContent = fmtMat(summary.totals.crown);
+  if (moraEl) moraEl.textContent = fmtMat(summary.totals.mora);
+  if (bonusEl) bonusEl.textContent = summary.bonus > 0
+    ? `${state.lang === 'ar' ? 'المستويات 11 → 15 مكافأة فقط:' : 'Bonus levels 11 → 15 only:'} ${summary.bonus}`
+    : (state.lang === 'ar' ? 'المستويات 11 → 15 مكافأة فقط ولا تحتاج مواد.' : 'Levels 11 → 15 are bonus only and do not need materials.');
+}
+
 function openDetail(id) {
   const c = getChar(id);
   if (!c) return;
@@ -1201,103 +2153,179 @@ function openDetail(id) {
   const fb = getImgFallback(c);
   const fbBig = `https://placehold.co/400x520/${e.color.replace('#','')}/ffffff?text=${encodeURIComponent(c.nameEn)}`;
 
-  const html = `
-<button class="gi-back-btn" onclick="closeDetail()">
-  ${t('back')}
-</button>
+  const constellation = c.constellationDetails ? (state.lang==='ar' ? c.constellationDetails.ar : c.constellationDetails.en) : null;
+  const talents = c.talentsData ? (state.lang==='ar' ? c.talentsData.ar : c.talentsData.en) : null;
+  const resources = c.devResourcesData ? (state.lang==='ar' ? c.devResourcesData.ar : c.devResourcesData.en) : null;
 
-<div class="gi-d-hero">
-  <img class="gi-d-banner" src="${c.imgBanner||fb}" alt="${name} banner"
-       onerror="this.onerror=null;this.style.background='linear-gradient(135deg,${e.color}44,var(--bg-base))'">
-  <div class="gi-d-overlay">
-    <div class="gi-d-portrait-block class="s${c.stars}"">
-      <img class="gi-d-portrait s${c.stars}" src="${c.imgBig||fb}" alt="${name}"
-           onerror="this.onerror=null;this.src='${fbBig}'">
-      <div class="gi-d-info">
-        <div class="gi-d-name">${name}</div>
-        <div class="gi-d-name-en">${nameAlt}</div>
-        <div class="gi-d-stars">${starsStr(c.stars)}</div>
-        <div class="gi-d-tags">
-          <span class="gi-d-tag" style="${tagStyle}">${e.icon} ${elemName}</span>
-          <span class="gi-d-tag" style="background:rgba(255,255,255,.1)">${w.icon} ${weapName}</span>
-          <span class="gi-d-tag" style="background:rgba(255,255,255,.08)">${c.stars}★</span>
+  const sectionCards = [];
+  if (constellation && constellation.length) {
+    sectionCards.push(`
+      <div class="gi-d-card gi-d-full">
+        ${sectionTitle('✨', state.lang==='ar' ? 'الكونستليشن' : 'Constellation')}
+        <div class="gi-section-grid">
+          ${constellation.map((x, idx) => `
+            <div class="gi-section-item">
+              <div class="gi-section-kicker">C${idx + 1}</div>
+              <div class="gi-section-title">${x.title}</div>
+              <div class="gi-section-text">${x.desc}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>`);
+  }
+  if (talents && talents.length) {
+    if ([1,2,3].includes(c.id)) {
+      sectionCards.push(buildTalentSystemSection(c, talents, e.color));
+    } else {
+      sectionCards.push(`
+        <div class="gi-d-card gi-d-full">
+          ${sectionTitle('🎯', state.lang==='ar' ? 'المواهب' : 'Talents')}
+          <div class="gi-section-grid">
+            ${talents.map(x => `
+              <div class="gi-section-item">
+                <div class="gi-section-kicker">${state.lang==='ar' ? 'موهبة' : 'Talent'}</div>
+                <div class="gi-section-title">${x.title}</div>
+                <div class="gi-section-text">${x.desc}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>`);
+    }
+  }
+  if (resources) {
+    sectionCards.push(`
+      <div class="gi-d-card gi-d-full">
+        ${sectionTitle('🛠', state.lang==='ar' ? 'موارد التطوير' : 'Development Resources')}
+        <div class="gi-resource-grid">
+          <div class="gi-res-item">
+            <div class="gi-res-key">${state.lang==='ar' ? 'المادة المحلية' : 'Local Specialty'}</div>
+            <div class="gi-res-val">${resources.specialty}</div>
+          </div>
+          <div class="gi-res-item">
+            <div class="gi-res-key">${state.lang==='ar' ? 'مواد الزعيم' : 'Boss Drop'}</div>
+            <div class="gi-res-val">${resources.boss}</div>
+          </div>
+          <div class="gi-res-item">
+            <div class="gi-res-key">${state.lang==='ar' ? 'الزعيم الأسبوعي' : 'Weekly Boss'}</div>
+            <div class="gi-res-val">${resources.weekly}</div>
+          </div>
+          <div class="gi-res-item">
+            <div class="gi-res-key">${state.lang==='ar' ? 'جواهر العنصر' : 'Element Gems'}</div>
+            <div class="gi-res-val">${resources.gems}</div>
+          </div>
+          <div class="gi-res-item">
+            <div class="gi-res-key">${state.lang==='ar' ? 'كتب المواهب' : 'Talent Books'}</div>
+            <div class="gi-res-val">${resources.book}</div>
+          </div>
+          <div class="gi-res-item">
+            <div class="gi-res-key">${state.lang==='ar' ? 'مواد الأعداء' : 'Enemy Materials'}</div>
+            <div class="gi-res-val">${resources.enemy}</div>
+          </div>
+        </div>
+      </div>`);
+  }
+
+  const extraSections = sectionCards.join('');
+
+  const html = `
+<div class="gi-modal-wrap" onclick="closeDetail()">
+  <div class="gi-modal-card" onclick="event.stopPropagation()">
+    <button class="gi-modal-close" onclick="closeDetail()" aria-label="Close">×</button>
+
+    <div class="gi-modal-head">
+      <div class="gi-d-hero">
+        <img class="gi-d-banner" src="${c.imgBanner||fb}" alt="${name} banner"
+             onerror="this.onerror=null;this.style.background='linear-gradient(135deg,${e.color}44,var(--bg-base))'">
+        <div class="gi-d-overlay">
+          <div class="gi-d-portrait-block">
+            <img class="gi-d-portrait s${c.stars}" src="${c.imgBig||fb}" alt="${name}"
+                 onerror="this.onerror=null;this.src='${fbBig}'">
+            <div class="gi-d-info">
+              <div class="gi-d-name">${name}</div>
+              <div class="gi-d-name-en">${nameAlt}</div>
+              <div class="gi-d-stars">${starsStr(c.stars)}</div>
+              <div class="gi-d-tags">
+                <span class="gi-d-tag" style="${tagStyle}">${e.icon} ${elemName}</span>
+                <span class="gi-d-tag" style="background:rgba(255,255,255,.1)">${w.icon} ${weapName}</span>
+                <span class="gi-d-tag" style="background:rgba(255,255,255,.08)">${c.stars}★</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="gi-modal-body">
+      <!-- SIDE ICONS -->
+      <div class="gi-d-sideicons">
+        <div class="gi-d-sideicon" title="${t('iconLeft')}">
+          ${renderIconAsset(c.iconLeft, e.icon, elemName + ' icon')}
+        </div>
+        <div class="gi-d-char-mid">
+          <img class="gi-d-char-mid-img" src="${c.img}" alt="${name}"
+               onerror="this.onerror=null;this.src='${fb}'">
+          <div style="font-size:11px;color:var(--text-muted);margin-top:4px">${name}</div>
+        </div>
+        <div class="gi-d-sideicon" title="${t('iconRight')}">
+          ${renderIconAsset(c.iconRight, w.icon, weapName + ' icon')}
+        </div>
+      </div>
+
+      <div class="gi-d-body">
+        <div class="gi-d-card">
+          <div class="gi-d-card-title">🧾 ${t('detailInfo')}</div>
+          <div class="gi-d-row">
+            <span class="gi-d-key">${t('element')}</span>
+            <span class="gi-d-val">${e.icon} ${elemName}</span>
+          </div>
+          <div class="gi-d-row">
+            <span class="gi-d-key">${t('weapon')}</span>
+            <span class="gi-d-val">${w.icon} ${weapName}</span>
+          </div>
+          <div class="gi-d-row">
+            <span class="gi-d-key">${t('stars_lbl')}</span>
+            <span class="gi-d-val" style="color:var(--gold)">${starsStr(c.stars)} (${c.stars}★)</span>
+          </div>
+          <div class="gi-d-row">
+            <span class="gi-d-key">${t('region')}</span>
+            <span class="gi-d-val">${regionName}</span>
+          </div>
+        </div>
+
+        <div class="gi-d-card">
+          <div class="gi-d-card-title">✨ ${t('detailStats')}</div>
+          <div class="gi-d-row">
+            <span class="gi-d-key">${t('title_lbl')}</span>
+            <span class="gi-d-val">${titleName}</span>
+          </div>
+          <div class="gi-d-row">
+            <span class="gi-d-key">${t('birthday')}</span>
+            <span class="gi-d-val">${c.birthday}</span>
+          </div>
+          <div class="gi-d-row">
+            <span class="gi-d-key">${t('constellation')}</span>
+            <span class="gi-d-val">${c.constellation}</span>
+          </div>
+        </div>
+
+        <div class="gi-d-card gi-d-full">
+          <div class="gi-d-desc-lbl">📜 ${t('detailDesc')}</div>
+          <p class="gi-d-desc-txt">${desc}</p>
+        </div>
+
+        ${extraSections}
+      </div>
+    </div>
+
+    <button class="gi-back-btn" onclick="closeDetail()" style="margin:0 18px 18px">${t('back')}</button>
   </div>
 </div>
-
-<!-- SIDE ICONS: أيقونات يسار ويمين (الوجه) — عدّل الصور بحرية -->
-<div class="gi-d-sideicons">
-  <div class="gi-d-sideicon" title="${t('iconLeft')}">
-    <img src="${c.iconLeft||''}"
-         alt="${elemName} icon"
-         onerror="this.onerror=null;this.style.display='none';this.parentNode.innerHTML='${e.icon}'"
-         style="width:100%;height:100%;object-fit:cover;border-radius:50%">
-  </div>
-  <div class="gi-d-char-mid">
-    <img class="gi-d-char-mid-img" src="${c.img}" alt="${name}"
-         onerror="this.onerror=null;this.src='${fb}'">
-    <div style="font-size:11px;color:var(--text-muted);margin-top:4px">${name}</div>
-  </div>
-  <div class="gi-d-sideicon" title="${t('iconRight')}">
-    <img src="${c.iconRight||''}"
-         alt="${weapName} icon"
-         onerror="this.onerror=null;this.style.display='none';this.parentNode.innerHTML='${w.icon}'"
-         style="width:100%;height:100%;object-fit:cover;border-radius:50%">
-  </div>
-</div>
-
-<div class="gi-d-body">
-  <div class="gi-d-card">
-    <div class="gi-d-card-title">${t('detailInfo')}</div>
-    <div class="gi-d-row">
-      <span class="gi-d-key">${t('element')}</span>
-      <span class="gi-d-val">${e.icon} ${elemName}</span>
-    </div>
-    <div class="gi-d-row">
-      <span class="gi-d-key">${t('weapon')}</span>
-      <span class="gi-d-val">${w.icon} ${weapName}</span>
-    </div>
-    <div class="gi-d-row">
-      <span class="gi-d-key">${t('stars_lbl')}</span>
-      <span class="gi-d-val" style="color:var(--gold)">${starsStr(c.stars)} (${c.stars}★)</span>
-    </div>
-    <div class="gi-d-row">
-      <span class="gi-d-key">${t('region')}</span>
-      <span class="gi-d-val">${regionName}</span>
-    </div>
-  </div>
-
-  <div class="gi-d-card">
-    <div class="gi-d-card-title">${t('detailStats')}</div>
-    <div class="gi-d-row">
-      <span class="gi-d-key">${t('title_lbl')}</span>
-      <span class="gi-d-val">${titleName}</span>
-    </div>
-    <div class="gi-d-row">
-      <span class="gi-d-key">${t('birthday')}</span>
-      <span class="gi-d-val">${c.birthday}</span>
-    </div>
-    <div class="gi-d-row">
-      <span class="gi-d-key">${t('constellation')}</span>
-      <span class="gi-d-val">${c.constellation}</span>
-    </div>
-  </div>
-
-  <div class="gi-d-card gi-d-full">
-    <div class="gi-d-desc-lbl">${t('detailDesc')}</div>
-    <p class="gi-d-desc-txt">${desc}</p>
-  </div>
-</div>
-
-<button class="gi-back-btn" onclick="closeDetail()" style="margin-bottom:8px">${t('back')}</button>
 `;
 
   const dv = el('gi-detail');
   dv.innerHTML = html;
+  forceEnglishDigits(dv);
 
-  el('gi-list').classList.add('gone');
   dv.classList.remove('gone');
   dv.classList.add('show');
   window.scrollTo({top:0,behavior:'smooth'});
@@ -1309,7 +2337,7 @@ function closeDetail() {
   const dv = el('gi-detail');
   dv.classList.add('gone');
   dv.classList.remove('show');
-  el('gi-list').classList.remove('gone');
+  dv.innerHTML = '';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1331,9 +2359,9 @@ function setLang(lang) {
     'hd-title': lang==='ar' ? CONFIG.siteNameAr : CONFIG.siteNameEn,
     'hd-sub':   lang==='ar' ? CONFIG.siteSubAr  : CONFIG.siteSubEn,
     'gi-breadcrumb': t('archive'),
-    'lbl-elements':  t('elements'),
-    'lbl-weapons':   t('weapons'),
-    'lbl-stars':     t('stars'),
+    'lbl-elements-text':  t('elements'),
+    'lbl-weapons-text':   t('weapons'),
+    'lbl-stars-text':     t('stars'),
     'lbl-showing':   null,
     'lbl-chars':     t('chars'),
     'btn-clearall':  t('clearall'),
@@ -1353,19 +2381,14 @@ function setLang(lang) {
   if (si) si.placeholder = t('search');
   if (si) si.setAttribute('dir', lang==='ar'?'rtl':'ltr');
 
-  // Rebuild filter labels
-  ELEMENTS.forEach(e => {
-    const lb = el(`eln-${e.id}`);
-    if (lb) lb.textContent = lang==='ar' ? e.ar : e.en;
-  });
-  WEAPONS.forEach(w => {
-    const lb = el(`wln-${w.id}`);
-    if (lb) lb.textContent = lang==='ar' ? w.ar : w.en;
-  });
+  // Rebuild icon filters so titles match the current language
+  buildFilters();
+  renderFilterBtns();
 
   // Re-render grid or detail
   if (state.view === 'list') {
     renderGrid();
+    forceEnglishDigits(document.body);
   } else {
     openDetail(state.selectedId);
   }
@@ -1428,8 +2451,683 @@ function renderCountdown() {
   renderGrid();
   updatePageBtns();
   renderCountdown();
+  forceEnglishDigits(document.body);
   setInterval(renderCountdown, 1000);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && state.view === 'detail') closeDetail();
+  });
 })();
+</script>
+
+<!-- ╔═══════════════════════════════════════╗
+     ║       SITE EDITOR v8 (GI)             ║
+     ╚═══════════════════════════════════════╝ -->
+<button id="gi-editor-toggle" type="button" aria-label="تعديل">
+  <span class="dot" aria-hidden="true"></span>
+  <span>تعديل</span>
+</button>
+
+<div id="gi-editor-ui" aria-label="أداة التعديل" role="dialog" aria-modal="false">
+  <div class="hdr" id="gi-editor-drag">
+    <div class="ttl">أداة التعديل</div>
+    <div class="sub" id="gi-editor-status">غير مفعلة</div>
+    <div class="x" id="gi-editor-close" title="إغلاق">×</div>
+  </div>
+
+  <div class="body">
+    <div class="mini">
+      • اضغط على أي عنصر في الصفحة لاختياره.<br>
+      • عدّل النص مباشرة (Double click) أو من الحقول هنا.<br>
+      • اسحب/كبّر من الإطار الذهبي حول العنصر.<br>
+      • للحذف/النسخ/الإضافة استخدم الأزرار بالأسفل.
+    </div>
+
+    <div class="chips" id="gi-editor-chips">
+      <span class="chip">لا يوجد عنصر محدد</span>
+    </div>
+
+    <div class="row">
+      <label>نص العنصر (Text)</label>
+      <textarea id="gi-editor-text" placeholder="اكتب النص هنا..."></textarea>
+    </div>
+
+    <div class="row">
+      <label>رابط (href) أو مصدر صورة (src)</label>
+      <input id="gi-editor-link" type="text" placeholder="https://... أو مسار الصورة">
+    </div>
+
+    <div class="row">
+      <label>HTML (متقدم)</label>
+      <textarea id="gi-editor-html" placeholder="<div>...</div>"></textarea>
+    </div>
+
+    <div class="row">
+      <label>إضافة عنصر (HTML)</label>
+      <textarea id="gi-editor-add" placeholder="مثال: <button class='gi-btn-clear'>زر</button>"></textarea>
+      <div class="btns">
+        <button class="btn" id="gi-editor-insert-inside" type="button">إضافة داخل</button>
+        <button class="btn" id="gi-editor-insert-after" type="button">إضافة بعد</button>
+      </div>
+    </div>
+
+    <div class="btns">
+      <button class="btn" id="gi-editor-duplicate" type="button">نسخ</button>
+      <button class="btn warn" id="gi-editor-delete" type="button">حذف</button>
+    </div>
+
+    <div class="btns">
+      <button class="btn" id="gi-editor-undo" type="button">تراجع</button>
+      <button class="btn" id="gi-editor-redo" type="button">إعادة</button>
+    </div>
+
+    <div class="btns">
+      <button class="btn gold" id="gi-editor-save-with" type="button">حفظ مع أداة التعديل</button>
+      <button class="btn" id="gi-editor-save-without" type="button">حفظ بدون أداة التعديل</button>
+    </div>
+
+    <div class="mini">
+      ملاحظة: التحريك/التكبير يضيف Styles Inline على العنصر. حفظ "بدون الأداة" يحذف الأداة نهائياً ويُبقي تعديلاتك.
+    </div>
+  </div>
+</div>
+
+<div id="gi-editor-overlay" aria-hidden="true">
+  <span class="h nw" data-h="nw"></span>
+  <span class="h n"  data-h="n"></span>
+  <span class="h ne" data-h="ne"></span>
+  <span class="h w"  data-h="w"></span>
+  <span class="h e"  data-h="e"></span>
+  <span class="h sw" data-h="sw"></span>
+  <span class="h s"  data-h="s"></span>
+  <span class="h se" data-h="se"></span>
+</div>
+<div id="gi-editor-toast" role="status" aria-live="polite"></div>
+
+
+<!-- GI SITE EDITOR v8 SCRIPT (single line include) -->
+<script id="gi-site-editor-v8">
+
+/* SITE EDITOR v8 (GI) — single-file visual editor
+   - Select any element, edit text/HTML, change src/href
+   - Drag to move (translate), handles to resize (width/height)
+   - Add/Remove/Duplicate
+   - Save with editor / save without editor
+*/
+(function(){
+  "use strict";
+  const $ = (s, r=document)=>r.querySelector(s);
+  const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
+
+  const toggleBtn = $("#gi-editor-toggle");
+  const ui = $("#gi-editor-ui");
+  const closeBtn = $("#gi-editor-close");
+  const statusEl = $("#gi-editor-status");
+  const overlay = $("#gi-editor-overlay");
+  const toast = $("#gi-editor-toast");
+
+  const chips = $("#gi-editor-chips");
+  const txtArea = $("#gi-editor-text");
+  const linkInput = $("#gi-editor-link");
+  const htmlArea = $("#gi-editor-html");
+  const addArea = $("#gi-editor-add");
+  const btnInsertInside = $("#gi-editor-insert-inside");
+  const btnInsertAfter = $("#gi-editor-insert-after");
+  const btnDup = $("#gi-editor-duplicate");
+  const btnDel = $("#gi-editor-delete");
+  const btnUndo = $("#gi-editor-undo");
+  const btnRedo = $("#gi-editor-redo");
+  const btnSaveWith = $("#gi-editor-save-with");
+  const btnSaveWithout = $("#gi-editor-save-without");
+
+  // Avoid selecting editor UI itself
+  const EDITOR_ROOT_IDS = new Set([
+    "gi-editor-toggle","gi-editor-ui","gi-editor-overlay","gi-editor-toast"
+  ]);
+
+  let enabled = false;
+  let selected = null;
+
+  // Simple undo/redo stacks (element-level)
+  const undoStack = [];
+  const redoStack = [];
+  const MAX_STACK = 60;
+
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(()=>toast.classList.remove("show"), 1600);
+  }
+
+  function isEditorEl(el){
+    if(!el || el === document.documentElement) return false;
+    if(el.id && EDITOR_ROOT_IDS.has(el.id)) return true;
+    return !!el.closest && (
+      el.closest("#gi-editor-ui") || el.closest("#gi-editor-toggle") ||
+      el.closest("#gi-editor-overlay") || el.closest("#gi-editor-toast")
+    );
+  }
+
+  function getPath(el){
+    try{
+      if(!el) return "";
+      if(el.id) return `#${el.id}`;
+      const cls = (el.className && typeof el.className==="string") ? el.className.trim().split(/\s+/).slice(0,2).join(".") : "";
+      return el.tagName.toLowerCase() + (cls? "."+cls:"");
+    }catch(e){ return "element"; }
+  }
+
+  function setChips(el){
+    if(!chips) return;
+    chips.innerHTML = "";
+    if(!el){
+      chips.innerHTML = `<span class="chip">لا يوجد عنصر محدد</span>`;
+      return;
+    }
+    const a = document.createElement("span");
+    a.className="chip";
+    a.textContent = getPath(el);
+    chips.appendChild(a);
+
+    const b = document.createElement("span");
+    b.className="chip";
+    b.textContent = el.tagName.toLowerCase();
+    chips.appendChild(b);
+
+    if(el.id){
+      const c = document.createElement("span");
+      c.className="chip";
+      c.textContent = "id: "+el.id;
+      chips.appendChild(c);
+    }
+  }
+
+  function rectFor(el){
+    const r = el.getBoundingClientRect();
+    return {
+      x: r.left,
+      y: r.top,
+      w: r.width,
+      h: r.height
+    };
+  }
+
+  function updateOverlay(){
+    if(!enabled || !selected){ overlay.classList.remove("show"); return; }
+    const r = rectFor(selected);
+    overlay.style.left = r.x + "px";
+    overlay.style.top = r.y + "px";
+    overlay.style.width = r.w + "px";
+    overlay.style.height = r.h + "px";
+    overlay.classList.add("show");
+  }
+
+  function pushUndo(entry){
+    undoStack.push(entry);
+    if(undoStack.length > MAX_STACK) undoStack.shift();
+    redoStack.length = 0;
+    btnUndo && (btnUndo.disabled = undoStack.length===0);
+    btnRedo && (btnRedo.disabled = redoStack.length===0);
+  }
+
+  function snapshot(el){
+    return {
+      el,
+      html: el.innerHTML,
+      text: el.textContent,
+      style: el.getAttribute("style"),
+      attrs: Array.from(el.attributes).map(a=>[a.name,a.value])
+    };
+  }
+
+  function restore(snap){
+    const el = snap.el;
+    if(!el || !el.isConnected) return;
+    // restore attributes
+    Array.from(el.attributes).forEach(a=>{
+      if(a.name.startsWith("data-gi-")) return;
+      if(a.name==="contenteditable") return;
+      if(a.name==="spellcheck") return;
+      el.removeAttribute(a.name);
+    });
+    snap.attrs.forEach(([n,v])=>{
+      if(n.startsWith("data-gi-")) return;
+      if(n==="contenteditable") return;
+      if(n==="spellcheck") return;
+      el.setAttribute(n,v);
+    });
+    if(snap.style==null) el.removeAttribute("style");
+    else el.setAttribute("style", snap.style);
+    el.innerHTML = snap.html;
+  }
+
+  function selectEl(el){
+    selected = el;
+    setChips(el);
+
+    if(!el){
+      txtArea.value = "";
+      linkInput.value = "";
+      htmlArea.value = "";
+      updateOverlay();
+      return;
+    }
+
+    // Populate fields
+    const tag = el.tagName.toLowerCase();
+    htmlArea.value = el.outerHTML;
+
+    // Text (for elements that can hold text)
+    if(tag === "img" || tag === "svg" || tag === "path"){
+      txtArea.value = "";
+    }else{
+      txtArea.value = (el.textContent || "").trim();
+    }
+
+    // Link/src helper
+    let linkVal = "";
+    if(tag === "a") linkVal = el.getAttribute("href") || "";
+    else if(tag === "img") linkVal = el.getAttribute("src") || "";
+    else{
+      // background-image url
+      const bg = (el.style && el.style.backgroundImage) ? el.style.backgroundImage : "";
+      if(bg && bg.includes("url(")) linkVal = bg.replace(/^url\(["']?/,"").replace(/["']?\)$/,"");
+    }
+    linkInput.value = linkVal;
+
+    updateOverlay();
+  }
+
+  function enableEditor(on){
+    enabled = !!on;
+    toggleBtn.classList.toggle("on", enabled);
+    ui.classList.toggle("show", enabled);
+    statusEl.textContent = enabled ? "مفعلة — اختر أي عنصر" : "غير مفعلة";
+    if(!enabled){
+      overlay.classList.remove("show");
+      selectEl(null);
+    }
+  }
+
+  // Toggle
+  toggleBtn.addEventListener("click", ()=>{
+    enableEditor(!enabled);
+    showToast(enabled ? "تم تفعيل أداة التعديل" : "تم إيقاف أداة التعديل");
+  });
+  closeBtn.addEventListener("click", ()=>enableEditor(false));
+
+  // Drag panel
+  (function(){
+    const bar = $("#gi-editor-drag");
+    if(!bar) return;
+    let drag=false, sx=0, sy=0, ox=0, oy=0;
+    bar.addEventListener("mousedown", (e)=>{
+      if(e.target && e.target.id==="gi-editor-close") return;
+      drag=true;
+      const r = ui.getBoundingClientRect();
+      sx=e.clientX; sy=e.clientY;
+      ox=r.left; oy=r.top;
+      ui.style.left = ox+"px";
+      ui.style.top = oy+"px";
+      ui.style.right = "auto";
+      ui.style.bottom = "auto";
+      ui.style.position = "fixed";
+      e.preventDefault();
+    });
+    window.addEventListener("mousemove",(e)=>{
+      if(!drag) return;
+      const nx = ox + (e.clientX - sx);
+      const ny = oy + (e.clientY - sy);
+      ui.style.left = Math.max(8, Math.min(nx, window.innerWidth - ui.offsetWidth - 8)) + "px";
+      ui.style.top  = Math.max(8, Math.min(ny, window.innerHeight - ui.offsetHeight - 8)) + "px";
+    });
+    window.addEventListener("mouseup",()=>drag=false);
+  })();
+
+  // Selecting elements
+  document.addEventListener("mousedown", (e)=>{
+    if(!enabled) return;
+    const el = e.target;
+    if(isEditorEl(el)) return;
+    if(!el || el === document.body || el === document.documentElement) return;
+    selectEl(el);
+  }, true);
+
+  // Inline text edit (double click)
+  document.addEventListener("dblclick", (e)=>{
+    if(!enabled) return;
+    const el = e.target;
+    if(isEditorEl(el)) return;
+    if(!el || el.tagName.toLowerCase()==="img") return;
+
+    const before = snapshot(el);
+    el.setAttribute("contenteditable", "true");
+    el.setAttribute("spellcheck", "false");
+    el.focus();
+
+    const done = ()=>{
+      el.removeAttribute("contenteditable");
+      el.removeAttribute("spellcheck");
+      const after = snapshot(el);
+      pushUndo({type:"edit", before, after});
+      selectEl(el);
+    };
+    el.addEventListener("blur", done, {once:true});
+  }, true);
+
+  // Update overlay on scroll/resize
+  window.addEventListener("scroll", ()=>updateOverlay(), {passive:true});
+  window.addEventListener("resize", ()=>updateOverlay(), {passive:true});
+
+  // Apply text from textarea
+  txtArea.addEventListener("input", ()=>{
+    if(!enabled || !selected) return;
+    const tag = selected.tagName.toLowerCase();
+    if(tag === "img") return;
+    const before = snapshot(selected);
+    selected.textContent = txtArea.value;
+    const after = snapshot(selected);
+    pushUndo({type:"text", before, after});
+    selectEl(selected);
+  });
+
+  // Apply link/src
+  linkInput.addEventListener("change", ()=>{
+    if(!enabled || !selected) return;
+    const before = snapshot(selected);
+    const tag = selected.tagName.toLowerCase();
+    const v = linkInput.value.trim();
+    if(tag === "a"){
+      if(v) selected.setAttribute("href", v);
+      else selected.removeAttribute("href");
+    }else if(tag === "img"){
+      if(v) selected.setAttribute("src", v);
+      else selected.removeAttribute("src");
+    }else{
+      if(v) selected.style.backgroundImage = `url("${v}")`;
+      else selected.style.backgroundImage = "";
+    }
+    const after = snapshot(selected);
+    pushUndo({type:"attr", before, after});
+    selectEl(selected);
+    showToast("تم التحديث");
+  });
+
+  // Apply HTML (outerHTML replace)
+  htmlArea.addEventListener("change", ()=>{
+    if(!enabled || !selected) return;
+    const v = htmlArea.value.trim();
+    if(!v) return;
+    const beforeEl = selected;
+    const before = snapshot(beforeEl);
+    try{
+      const tmp = document.createElement("div");
+      tmp.innerHTML = v;
+      const newEl = tmp.firstElementChild;
+      if(!newEl) return;
+      beforeEl.replaceWith(newEl);
+      const after = snapshot(newEl);
+      pushUndo({type:"replace", before, after});
+      selectEl(newEl);
+      showToast("تم تطبيق HTML");
+    }catch(err){
+      showToast("تعذر تطبيق HTML");
+    }
+  });
+
+  // Add HTML
+  function insertHTML(where){
+    if(!enabled || !selected) return;
+    const v = addArea.value.trim();
+    if(!v) return;
+    const before = snapshot(selected);
+    try{
+      if(where==="inside"){
+        selected.insertAdjacentHTML("beforeend", v);
+      }else if(where==="after"){
+        selected.insertAdjacentHTML("afterend", v);
+      }
+      const after = snapshot(selected);
+      pushUndo({type:"insert", before, after});
+      selectEl(selected);
+      showToast("تمت الإضافة");
+    }catch(e){
+      showToast("تعذر إضافة العنصر");
+    }
+  }
+  btnInsertInside.addEventListener("click", ()=>insertHTML("inside"));
+  btnInsertAfter.addEventListener("click", ()=>insertHTML("after"));
+
+  // Duplicate
+  btnDup.addEventListener("click", ()=>{
+    if(!enabled || !selected) return;
+    const before = snapshot(selected);
+    const clone = selected.cloneNode(true);
+    selected.insertAdjacentElement("afterend", clone);
+    const after = snapshot(clone);
+    pushUndo({type:"dup", before, after});
+    selectEl(clone);
+    showToast("تم النسخ");
+  });
+
+  // Delete
+  btnDel.addEventListener("click", ()=>{
+    if(!enabled || !selected) return;
+    const el = selected;
+    const parent = el.parentElement;
+    if(!parent) return;
+    const before = snapshot(el);
+    const ph = document.createComment("gi-deleted");
+    parent.insertBefore(ph, el);
+    el.remove();
+    pushUndo({type:"del", before, after:{placeholder:ph}});
+    selectEl(null);
+    overlay.classList.remove("show");
+    showToast("تم الحذف");
+  });
+
+  // Undo/Redo
+  function doUndo(){
+    const op = undoStack.pop();
+    if(!op) return;
+    redoStack.push(op);
+    btnUndo && (btnUndo.disabled = undoStack.length===0);
+    btnRedo && (btnRedo.disabled = redoStack.length===0);
+
+    if(op.type==="del" && op.after && op.after.placeholder){
+      // restore deleted element
+      const ph = op.after.placeholder;
+      if(ph && ph.parentNode){
+        const tmp = document.createElement("div");
+        tmp.innerHTML = op.before.html ? `<div data-gi-wrap="1">${op.before.html}</div>` : "";
+        // best effort: recreate element from before snapshot outerHTML (we stored innerHTML only). fallback: no
+      }
+      // we cannot fully restore without outerHTML, so keep simple message
+      showToast("تراجع جزئي (حذف)");
+      return;
+    }
+    if(op.before && op.before.el && op.before.el.isConnected){
+      restore(op.before);
+      selectEl(op.before.el);
+      updateOverlay();
+      return;
+    }
+    if(op.type==="replace" && op.after && op.after.el && op.after.el.isConnected){
+      // replace back to before by setting innerHTML+attrs on current element
+      restore(op.before);
+      selectEl(op.before.el);
+      updateOverlay();
+      return;
+    }
+    showToast("تم التراجع");
+  }
+  function doRedo(){
+    const op = redoStack.pop();
+    if(!op) return;
+    undoStack.push(op);
+    btnUndo && (btnUndo.disabled = undoStack.length===0);
+    btnRedo && (btnRedo.disabled = redoStack.length===0);
+
+    if(op.after && op.after.el && op.after.el.isConnected){
+      restore(op.after);
+      selectEl(op.after.el);
+      updateOverlay();
+      showToast("تمت الإعادة");
+      return;
+    }
+    showToast("إعادة جزئية");
+  }
+  btnUndo.addEventListener("click", doUndo);
+  btnRedo.addEventListener("click", doRedo);
+  btnUndo.disabled = true; btnRedo.disabled = true;
+
+  // Move/Resize
+  (function(){
+    let mode=null; // "move" or "resize"
+    let handle=null;
+    let startX=0,startY=0;
+    let baseRect=null;
+    let baseTx=0,baseTy=0;
+
+    function getTranslate(el){
+      const tx = parseFloat(el.dataset.giTx || "0") || 0;
+      const ty = parseFloat(el.dataset.giTy || "0") || 0;
+      return {tx,ty};
+    }
+    function setTranslate(el, tx, ty){
+      el.dataset.giTx = String(tx);
+      el.dataset.giTy = String(ty);
+      el.style.transform = `translate(${tx}px, ${ty}px)`;
+    }
+
+    function onDown(e){
+      if(!enabled || !selected) return;
+      if(isEditorEl(e.target)) return;
+
+      // If clicked overlay handle -> resize
+      const h = e.target && e.target.dataset ? e.target.dataset.h : null;
+      if(h){
+        mode="resize"; handle=h;
+      }else{
+        // move when mouse down on overlay border area
+        if(e.target === overlay) mode="move";
+        else return;
+      }
+
+      const before = snapshot(selected);
+      selected.dataset.giLastBefore = JSON.stringify({}); // marker
+
+      startX = e.clientX; startY = e.clientY;
+      baseRect = rectFor(selected);
+      const t = getTranslate(selected);
+      baseTx = t.tx; baseTy = t.ty;
+
+      function onMove(ev){
+        if(!mode) return;
+        const dx = ev.clientX - startX;
+        const dy = ev.clientY - startY;
+
+        if(mode==="move"){
+          setTranslate(selected, baseTx + dx, baseTy + dy);
+          updateOverlay();
+        }else if(mode==="resize"){
+          // apply width/height
+          const style = selected.style;
+          const w0 = baseRect.w, h0 = baseRect.h;
+
+          let w = w0, h2 = h0;
+          if(handle.includes("e")) w = Math.max(10, w0 + dx);
+          if(handle.includes("w")) w = Math.max(10, w0 - dx);
+          if(handle.includes("s")) h2= Math.max(10, h0 + dy);
+          if(handle.includes("n")) h2= Math.max(10, h0 - dy);
+
+          style.width = w + "px";
+          style.height = h2 + "px";
+          updateOverlay();
+        }
+      }
+      function onUp(){
+        window.removeEventListener("mousemove", onMove);
+        window.removeEventListener("mouseup", onUp);
+        const after = snapshot(selected);
+        pushUndo({type:"transform", before, after});
+        mode=null; handle=null;
+        selectEl(selected);
+      }
+
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("mouseup", onUp);
+      e.preventDefault();
+    }
+
+    overlay.addEventListener("mousedown", onDown);
+    $$("#gi-editor-overlay .h").forEach(h=>{
+      h.addEventListener("mousedown", onDown);
+    });
+  })();
+
+  // Save helpers
+  function download(name, text){
+    const blob = new Blob([text], {type:"text/html;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 1500);
+  }
+
+  function stripEditorFromDoc(doc){
+    // remove editor DOM
+    ["gi-editor-toggle","gi-editor-ui","gi-editor-overlay","gi-editor-toast"].forEach(id=>{
+      const el = doc.getElementById(id);
+      if(el) el.remove();
+    });
+    // remove editor CSS (dedicated tag)
+    const edStyle = doc.getElementById("gi-editor-style");
+    if(edStyle) edStyle.remove();
+    // remove editor script tag by id
+    const scr = doc.getElementById("gi-site-editor-v8");
+    if(scr) scr.remove();
+
+    // cleanup editable artifacts
+    Array.from(doc.querySelectorAll("[contenteditable]")).forEach(el=>{
+      el.removeAttribute("contenteditable");
+      el.removeAttribute("spellcheck");
+    });
+    // remove dataset keys
+    Array.from(doc.querySelectorAll("[data-gi-tx],[data-gi-ty]")).forEach(el=>{
+      el.removeAttribute("data-gi-tx");
+      el.removeAttribute("data-gi-ty");
+    });
+    return doc;
+  }
+
+  function save(withEditor){
+    const clone = document.documentElement.cloneNode(true);
+    const doc = document.implementation.createHTMLDocument("copy");
+    doc.replaceChild(doc.importNode(clone, true), doc.documentElement);
+
+    if(!withEditor){
+      stripEditorFromDoc(doc);
+    }
+
+    const out = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
+    const base = (document.title || "site").replace(/[\\\/:*?"<>|]+/g,"-");
+    const suffix = withEditor ? "_with-editor" : "_clean";
+    download(base + suffix + ".html", out);
+    showToast(withEditor ? "تم حفظ نسخة مع الأداة" : "تم حفظ نسخة بدون الأداة");
+  }
+
+  btnSaveWith.addEventListener("click", ()=>save(true));
+  btnSaveWithout.addEventListener("click", ()=>save(false));
+
+  // Start disabled
+  enableEditor(false);
+})();
+
 </script>
 </body>
 </html>
