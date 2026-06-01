@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" id="gi-html">
-<head>
+<html lang="ar" dir="rtl" id="gi-html"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <meta name="description" content="أرشيف شخصيات جنشن إمباكت - دليل شامل لجميع الشخصيات مع تفاصيل كاملة">
@@ -16,8 +15,8 @@
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&amp;family=Cinzel:wght@400;700&amp;display=swap" rel="stylesheet">
 
 <style>
 
@@ -911,123 +910,7 @@ body::before{
 }
 
 </style>
-<style id="gi-editor-style">
-/* ═══════════════════════════════════════
-   SITE EDITOR v8 (GI) — UI
-═══════════════════════════════════════ */
-#gi-editor-toggle{
-  position:fixed;inset-inline-start:16px;bottom:16px;z-index:999999;
-  display:inline-flex;align-items:center;gap:10px;
-  padding:10px 14px;border-radius:999px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(15,16,30,.72);
-  color:#fff;font-family:var(--font);font-weight:900;font-size:13px;
-  cursor:pointer;user-select:none;
-  box-shadow:0 18px 55px rgba(0,0,0,.45);
-  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-}
-#gi-editor-toggle .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35)}
-#gi-editor-toggle.on .dot{background:var(--gold);box-shadow:0 0 12px var(--gold-glow)}
-#gi-editor-ui{
-  position:fixed;inset-inline-start:16px;bottom:72px;z-index:999999;
-  width:min(420px,calc(100vw - 32px));
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(10,12,24,.78);
-  color:#fff;
-  font-family:var(--font);
-  box-shadow:0 28px 90px rgba(0,0,0,.62);
-  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  display:none;
-}
-#gi-editor-ui.show{display:block}
-#gi-editor-ui *{box-sizing:border-box}
-#gi-editor-ui .hdr{
-  padding:12px 12px 10px;
-  display:flex;align-items:center;gap:10px;
-  cursor:move;
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-#gi-editor-ui .hdr .ttl{font-weight:900;font-size:13px}
-#gi-editor-ui .hdr .sub{margin-inline-start:auto;font-size:11px;color:rgba(255,255,255,.7)}
-#gi-editor-ui .hdr .x{
-  width:32px;height:32px;border-radius:10px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.08);
-  color:#fff;font-weight:900;font-size:16px;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;
-}
-#gi-editor-ui .body{padding:12px;display:grid;gap:10px}
-#gi-editor-ui .row{display:grid;gap:6px}
-#gi-editor-ui label{font-size:11px;color:rgba(255,255,255,.75);font-weight:800}
-#gi-editor-ui input,#gi-editor-ui textarea,#gi-editor-ui select{
-  width:100%;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(0,0,0,.25);
-  color:#fff;
-  padding:10px 12px;
-  font-family:var(--font);
-  outline:none;
-}
-#gi-editor-ui textarea{min-height:70px;resize:vertical}
-#gi-editor-ui .btns{display:flex;flex-wrap:wrap;gap:8px}
-#gi-editor-ui .btn{
-  flex:1;
-  min-width:calc(50% - 4px);
-  padding:10px 12px;border-radius:12px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.08);
-  color:#fff;font-family:var(--font);font-weight:900;
-  cursor:pointer;
-}
-#gi-editor-ui .btn:hover{background:rgba(255,255,255,.14)}
-#gi-editor-ui .btn.warn{background:rgba(255,68,68,.14);border-color:rgba(255,68,68,.28)}
-#gi-editor-ui .btn.gold{background:rgba(240,192,64,.18);border-color:rgba(240,192,64,.28)}
-#gi-editor-ui .mini{font-size:11px;color:rgba(255,255,255,.72);line-height:1.8}
-#gi-editor-ui .chips{display:flex;flex-wrap:wrap;gap:6px}
-#gi-editor-ui .chip{
-  padding:6px 10px;border-radius:999px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
-  font-size:11px;color:#fff;
-  max-width:100%;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-}
-#gi-editor-overlay{
-  position:fixed;z-index:999998;pointer-events:none;
-  border:2px solid rgba(240,192,64,.9);
-  border-radius:10px;
-  box-shadow:0 0 0 2px rgba(0,0,0,.35),0 0 22px rgba(240,192,64,.2);
-  display:none;
-}
-#gi-editor-overlay.show{display:block}
-#gi-editor-overlay .h{
-  position:absolute;width:10px;height:10px;border-radius:3px;
-  background:rgba(240,192,64,.95);
-  border:1px solid rgba(0,0,0,.45);
-  pointer-events:auto;
-}
-#gi-editor-overlay .h.nw{top:-6px;left:-6px;cursor:nwse-resize}
-#gi-editor-overlay .h.ne{top:-6px;right:-6px;cursor:nesw-resize}
-#gi-editor-overlay .h.sw{bottom:-6px;left:-6px;cursor:nesw-resize}
-#gi-editor-overlay .h.se{bottom:-6px;right:-6px;cursor:nwse-resize}
-#gi-editor-overlay .h.n{top:-6px;left:50%;transform:translateX(-50%);cursor:ns-resize}
-#gi-editor-overlay .h.s{bottom:-6px;left:50%;transform:translateX(-50%);cursor:ns-resize}
-#gi-editor-overlay .h.w{left:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}
-#gi-editor-overlay .h.e{right:-6px;top:50%;transform:translateY(-50%);cursor:ew-resize}
-#gi-editor-toast{
-  position:fixed;top:18px;left:18px;z-index:1000000;
-  padding:10px 12px;border-radius:12px;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(0,0,0,.55);
-  color:#fff;font-family:var(--font);font-weight:800;font-size:12px;
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  display:none;
-}
-#gi-editor-toast.show{display:block}
-</style>
+
 </head>
 <body>
 
@@ -1066,8 +949,11 @@ body::before{
       <span class="gi-countdown-lbl" id="cd-lbl">موعد التحديث القادم</span>
     </div>
     <div class="gi-countdown-units" id="cd-units">
-      <!-- Rendered by JS -->
-    </div>
+      <div class="gi-cd-unit"><span class="gi-cd-val">44</span><span class="gi-cd-key">أيام</span></div>
+      <span class="gi-cd-sep">:</span>
+      <div class="gi-cd-unit"><span class="gi-cd-val">01</span><span class="gi-cd-key">ساعات</span></div>
+      <span class="gi-cd-sep">:</span>
+      <div class="gi-cd-unit"><span class="gi-cd-val">00</span><span class="gi-cd-key">دقائق</span></div></div>
   </div>
 
   <!-- ADSENSE SLOT 1 - Replace with your ad code -->
@@ -1091,25 +977,45 @@ body::before{
     <!-- SEARCH + FILTERS -->
     <div class="gi-filters">
       <div class="gi-search-row">
-        <input type="search" id="gi-search"
-               class="gi-search-input"
-               placeholder="ابحث عن شخصية..."
-               oninput="onSearch(this.value)"
-               autocomplete="off">
+        <input type="search" id="gi-search" class="gi-search-input" placeholder="ابحث عن شخصية..." oninput="onSearch(this.value)" autocomplete="off">
         <button class="gi-btn-clear" onclick="clearAll()" id="btn-clearall">مسح الكل</button>
       </div>
 
       <div class="gi-filter-bar" aria-label="الفلاتر">
         <div class="gi-fgroup gi-inline-group">
           <div class="gi-flabel" id="lbl-elements"><span id="lbl-elements-text">العناصر</span></div>
-          <div class="gi-fbtnrow" id="elem-filters"></div>
+          <div class="gi-fbtnrow" id="elem-filters"><button class="gi-fbtn gi-icon-only" data-e="geo" onclick="toggleFilter('element','geo')" id="ef-geo" title="الحجر" aria-label="الحجر">
+       <span class="gi-ficon" aria-hidden="true">⬡</span>
+     </button><button class="gi-fbtn gi-icon-only" data-e="pyro" onclick="toggleFilter('element','pyro')" id="ef-pyro" title="النار" aria-label="النار">
+       <span class="gi-ficon" aria-hidden="true">🔥</span>
+     </button><button class="gi-fbtn gi-icon-only" data-e="hydro" onclick="toggleFilter('element','hydro')" id="ef-hydro" title="الماء" aria-label="الماء">
+       <span class="gi-ficon" aria-hidden="true">💧</span>
+     </button><button class="gi-fbtn gi-icon-only" data-e="electro" onclick="toggleFilter('element','electro')" id="ef-electro" title="الكهرباء" aria-label="الكهرباء">
+       <span class="gi-ficon" aria-hidden="true">⚡</span>
+     </button><button class="gi-fbtn gi-icon-only" data-e="cryo" onclick="toggleFilter('element','cryo')" id="ef-cryo" title="الثلج" aria-label="الثلج">
+       <span class="gi-ficon" aria-hidden="true">❄</span>
+     </button><button class="gi-fbtn gi-icon-only" data-e="dendro" onclick="toggleFilter('element','dendro')" id="ef-dendro" title="النبات" aria-label="النبات">
+       <span class="gi-ficon" aria-hidden="true">🌿</span>
+     </button><button class="gi-fbtn gi-icon-only" data-e="anemo" onclick="toggleFilter('element','anemo')" id="ef-anemo" title="الهواء" aria-label="الهواء">
+       <span class="gi-ficon" aria-hidden="true">🌀</span>
+     </button></div>
         </div>
 
         <span class="gi-vsep" aria-hidden="true"></span>
 
         <div class="gi-fgroup gi-inline-group">
           <div class="gi-flabel" id="lbl-weapons"><span id="lbl-weapons-text">الأسلحة</span></div>
-          <div class="gi-fbtnrow" id="weap-filters"></div>
+          <div class="gi-fbtnrow" id="weap-filters"><button class="gi-fbtn gi-icon-only" data-w="sword" onclick="toggleFilter('weapon','sword')" id="wf-sword" title="سيف خفيف" aria-label="سيف خفيف">
+       <span class="gi-ficon" aria-hidden="true">⚔</span>
+     </button><button class="gi-fbtn gi-icon-only" data-w="claymore" onclick="toggleFilter('weapon','claymore')" id="wf-claymore" title="سيف ثقيل" aria-label="سيف ثقيل">
+       <span class="gi-ficon" aria-hidden="true">🗡</span>
+     </button><button class="gi-fbtn gi-icon-only" data-w="bow" onclick="toggleFilter('weapon','bow')" id="wf-bow" title="قوس" aria-label="قوس">
+       <span class="gi-ficon" aria-hidden="true">🏹</span>
+     </button><button class="gi-fbtn gi-icon-only" data-w="catalyst" onclick="toggleFilter('weapon','catalyst')" id="wf-catalyst" title="كتاب" aria-label="كتاب">
+       <span class="gi-ficon" aria-hidden="true">📖</span>
+     </button><button class="gi-fbtn gi-icon-only" data-w="polearm" onclick="toggleFilter('weapon','polearm')" id="wf-polearm" title="رمح" aria-label="رمح">
+       <span class="gi-ficon" aria-hidden="true">✦</span>
+     </button></div>
         </div>
 
         <span class="gi-vsep" aria-hidden="true"></span>
@@ -1130,17 +1036,137 @@ body::before{
 
     <!-- GRID HEADER + GRID -->
     <div class="gi-ghdr">
-      <span id="lbl-showing">عرض: <strong id="gi-count" class="gi-gcount">0</strong> <span id="lbl-chars">شخصية</span></span>
-      <span id="gi-page-lbl" style="color:var(--text-dim);font-size:13px"></span>
+      <span id="lbl-showing">عرض: <strong id="gi-count" class="gi-gcount">10</strong> <span id="lbl-chars">شخصية</span></span>
+      <span id="gi-page-lbl" style="color:var(--text-dim);font-size:13px">الصفحة 1 من 2</span>
     </div>
-    <div class="gi-grid" id="gi-grid"></div>
+    <div class="gi-grid" id="gi-grid">
+<div class="gi-card s5" onclick="openDetail(1)" title="شيلونين">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/6B5019/FFD700?text=Shellonin" alt="شيلونين" onerror="this.onerror=null;this.src='https://placehold.co/200x250/6B5019/FFD700?text=Shellonin'">
+    <div class="gi-badge-elem geo" title="الحجر">⬡</div>
+    <div class="gi-badge-weap" title="سيف خفيف">⚔</div>
+    <div class="gi-cstars">★★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">شيلونين</div>
+    <div class="gi-cmeta">⬡ الحجر &nbsp;·&nbsp; ⚔ سيف خفيف</div>
+  </div>
+</div>
+<div class="gi-card s5" onclick="openDetail(2)" title="فورينا">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/0D3B6E/87CEEB?text=Furina" alt="فورينا" onerror="this.onerror=null;this.src='https://placehold.co/200x250/0D3B6E/87CEEB?text=Furina'">
+    <div class="gi-badge-elem hydro" title="الماء">💧</div>
+    <div class="gi-badge-weap" title="سيف خفيف">⚔</div>
+    <div class="gi-cstars">★★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">فورينا</div>
+    <div class="gi-cmeta">💧 الماء &nbsp;·&nbsp; ⚔ سيف خفيف</div>
+  </div>
+</div>
+<div class="gi-card s5" onclick="openDetail(3)" title="نيوفيليت">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/0D3B6E/B0D4FF?text=Neuvillette" alt="نيوفيليت" onerror="this.onerror=null;this.src='https://placehold.co/200x250/0D3B6E/87CEEB?text=Neuvillette'">
+    <div class="gi-badge-elem hydro" title="الماء">💧</div>
+    <div class="gi-badge-weap" title="كتاب">📖</div>
+    <div class="gi-cstars">★★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">نيوفيليت</div>
+    <div class="gi-cmeta">💧 الماء &nbsp;·&nbsp; 📖 كتاب</div>
+  </div>
+</div>
+<div class="gi-card s5" onclick="openDetail(4)" title="ليني">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/5c1c1c/FFB080?text=Lyney" alt="ليني" onerror="this.onerror=null;this.src='https://placehold.co/200x250/5c1c1c/FF8060?text=Lyney'">
+    <div class="gi-badge-elem pyro" title="النار">🔥</div>
+    <div class="gi-badge-weap" title="قوس">🏹</div>
+    <div class="gi-cstars">★★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">ليني</div>
+    <div class="gi-cmeta">🔥 النار &nbsp;·&nbsp; 🏹 قوس</div>
+  </div>
+</div>
+<div class="gi-card s5" onclick="openDetail(5)" title="كلورينده">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/2d0d4a/cc88ff?text=Clorinde" alt="كلورينده" onerror="this.onerror=null;this.src='https://placehold.co/200x250/2d0d4a/cc88ff?text=Clorinde'">
+    <div class="gi-badge-elem electro" title="الكهرباء">⚡</div>
+    <div class="gi-badge-weap" title="سيف خفيف">⚔</div>
+    <div class="gi-cstars">★★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">كلورينده</div>
+    <div class="gi-cmeta">⚡ الكهرباء &nbsp;·&nbsp; ⚔ سيف خفيف</div>
+  </div>
+</div>
+<div class="gi-card s5" onclick="openDetail(6)" title="أرلكينو">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/5c1c1c/FF6050?text=Arlecchino" alt="أرلكينو" onerror="this.onerror=null;this.src='https://placehold.co/200x250/5c1c1c/FF8060?text=Arlecchino'">
+    <div class="gi-badge-elem pyro" title="النار">🔥</div>
+    <div class="gi-badge-weap" title="رمح">✦</div>
+    <div class="gi-cstars">★★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">أرلكينو</div>
+    <div class="gi-cmeta">🔥 النار &nbsp;·&nbsp; ✦ رمح</div>
+  </div>
+</div>
+<div class="gi-card s5" onclick="openDetail(7)" title="نافيا">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/6B5019/FFD480?text=Navia" alt="نافيا" onerror="this.onerror=null;this.src='https://placehold.co/200x250/6B5019/FFD700?text=Navia'">
+    <div class="gi-badge-elem geo" title="الحجر">⬡</div>
+    <div class="gi-badge-weap" title="سيف ثقيل">🗡</div>
+    <div class="gi-cstars">★★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">نافيا</div>
+    <div class="gi-cmeta">⬡ الحجر &nbsp;·&nbsp; 🗡 سيف ثقيل</div>
+  </div>
+</div>
+<div class="gi-card s5" onclick="openDetail(8)" title="كينيش">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/1a4a1a/90EE90?text=Kinich" alt="كينيش" onerror="this.onerror=null;this.src='https://placehold.co/200x250/1a4a1a/90EE90?text=Kinich'">
+    <div class="gi-badge-elem dendro" title="النبات">🌿</div>
+    <div class="gi-badge-weap" title="سيف ثقيل">🗡</div>
+    <div class="gi-cstars">★★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">كينيش</div>
+    <div class="gi-cmeta">🌿 النبات &nbsp;·&nbsp; 🗡 سيف ثقيل</div>
+  </div>
+</div>
+<div class="gi-card s4" onclick="openDetail(9)" title="شيفروز">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/5c1c1c/FFAA88?text=Chevreuse" alt="شيفروز" onerror="this.onerror=null;this.src='https://placehold.co/200x250/5c1c1c/FF8060?text=Chevreuse'">
+    <div class="gi-badge-elem pyro" title="النار">🔥</div>
+    <div class="gi-badge-weap" title="رمح">✦</div>
+    <div class="gi-cstars">★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">شيفروز</div>
+    <div class="gi-cmeta">🔥 النار &nbsp;·&nbsp; ✦ رمح</div>
+  </div>
+</div>
+<div class="gi-card s4" onclick="openDetail(10)" title="شارلوت">
+  <div class="gi-cport">
+    <img class="gi-cimg" src="https://placehold.co/200x250/0a3a50/B0E8F8?text=Charlotte" alt="شارلوت" onerror="this.onerror=null;this.src='https://placehold.co/200x250/0a3a50/B0E8F8?text=Charlotte'">
+    <div class="gi-badge-elem cryo" title="الثلج">❄</div>
+    <div class="gi-badge-weap" title="كتاب">📖</div>
+    <div class="gi-cstars">★★★★</div>
+  </div>
+  <div class="gi-cname-area">
+    <div class="gi-cname">شارلوت</div>
+    <div class="gi-cmeta">❄ الثلج &nbsp;·&nbsp; 📖 كتاب</div>
+  </div>
+</div></div>
 
     <!-- PAGINATION -->
     <div class="gi-pagination">
-      <button class="gi-pgbtn arr" id="pg-prev" onclick="changePg(-1)" disabled>&#8250;</button>
+      <button class="gi-pgbtn arr" id="pg-prev" onclick="changePg(-1)" disabled="">›</button>
       <button class="gi-pgbtn on" id="pg-1" onclick="goPage(1)">1</button>
       <button class="gi-pgbtn" id="pg-2" onclick="goPage(2)">2</button>
-      <button class="gi-pgbtn arr" id="pg-next" onclick="changePg(1)">&#8249;</button>
+      <button class="gi-pgbtn arr" id="pg-next" onclick="changePg(1)">‹</button>
     </div>
 
   </div><!-- end list view -->
@@ -2462,672 +2488,16 @@ function renderCountdown() {
 <!-- ╔═══════════════════════════════════════╗
      ║       SITE EDITOR v8 (GI)             ║
      ╚═══════════════════════════════════════╝ -->
-<button id="gi-editor-toggle" type="button" aria-label="تعديل">
-  <span class="dot" aria-hidden="true"></span>
-  <span>تعديل</span>
-</button>
 
-<div id="gi-editor-ui" aria-label="أداة التعديل" role="dialog" aria-modal="false">
-  <div class="hdr" id="gi-editor-drag">
-    <div class="ttl">أداة التعديل</div>
-    <div class="sub" id="gi-editor-status">غير مفعلة</div>
-    <div class="x" id="gi-editor-close" title="إغلاق">×</div>
-  </div>
 
-  <div class="body">
-    <div class="mini">
-      • اضغط على أي عنصر في الصفحة لاختياره.<br>
-      • عدّل النص مباشرة (Double click) أو من الحقول هنا.<br>
-      • اسحب/كبّر من الإطار الذهبي حول العنصر.<br>
-      • للحذف/النسخ/الإضافة استخدم الأزرار بالأسفل.
-    </div>
 
-    <div class="chips" id="gi-editor-chips">
-      <span class="chip">لا يوجد عنصر محدد</span>
-    </div>
 
-    <div class="row">
-      <label>نص العنصر (Text)</label>
-      <textarea id="gi-editor-text" placeholder="اكتب النص هنا..."></textarea>
-    </div>
 
-    <div class="row">
-      <label>رابط (href) أو مصدر صورة (src)</label>
-      <input id="gi-editor-link" type="text" placeholder="https://... أو مسار الصورة">
-    </div>
 
-    <div class="row">
-      <label>HTML (متقدم)</label>
-      <textarea id="gi-editor-html" placeholder="<div>...</div>"></textarea>
-    </div>
-
-    <div class="row">
-      <label>إضافة عنصر (HTML)</label>
-      <textarea id="gi-editor-add" placeholder="مثال: <button class='gi-btn-clear'>زر</button>"></textarea>
-      <div class="btns">
-        <button class="btn" id="gi-editor-insert-inside" type="button">إضافة داخل</button>
-        <button class="btn" id="gi-editor-insert-after" type="button">إضافة بعد</button>
-      </div>
-    </div>
-
-    <div class="btns">
-      <button class="btn" id="gi-editor-duplicate" type="button">نسخ</button>
-      <button class="btn warn" id="gi-editor-delete" type="button">حذف</button>
-    </div>
-
-    <div class="btns">
-      <button class="btn" id="gi-editor-undo" type="button">تراجع</button>
-      <button class="btn" id="gi-editor-redo" type="button">إعادة</button>
-    </div>
-
-    <div class="btns">
-      <button class="btn gold" id="gi-editor-save-with" type="button">حفظ مع أداة التعديل</button>
-      <button class="btn" id="gi-editor-save-without" type="button">حفظ بدون أداة التعديل</button>
-    </div>
-
-    <div class="mini">
-      ملاحظة: التحريك/التكبير يضيف Styles Inline على العنصر. حفظ "بدون الأداة" يحذف الأداة نهائياً ويُبقي تعديلاتك.
-    </div>
-  </div>
-</div>
-
-<div id="gi-editor-overlay" aria-hidden="true">
-  <span class="h nw" data-h="nw"></span>
-  <span class="h n"  data-h="n"></span>
-  <span class="h ne" data-h="ne"></span>
-  <span class="h w"  data-h="w"></span>
-  <span class="h e"  data-h="e"></span>
-  <span class="h sw" data-h="sw"></span>
-  <span class="h s"  data-h="s"></span>
-  <span class="h se" data-h="se"></span>
-</div>
-<div id="gi-editor-toast" role="status" aria-live="polite"></div>
 
 
 <!-- GI SITE EDITOR v8 SCRIPT (single line include) -->
-<script id="gi-site-editor-v8">
 
-/* SITE EDITOR v8 (GI) — single-file visual editor
-   - Select any element, edit text/HTML, change src/href
-   - Drag to move (translate), handles to resize (width/height)
-   - Add/Remove/Duplicate
-   - Save with editor / save without editor
-*/
-(function(){
-  "use strict";
-  const $ = (s, r=document)=>r.querySelector(s);
-  const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
 
-  const toggleBtn = $("#gi-editor-toggle");
-  const ui = $("#gi-editor-ui");
-  const closeBtn = $("#gi-editor-close");
-  const statusEl = $("#gi-editor-status");
-  const overlay = $("#gi-editor-overlay");
-  const toast = $("#gi-editor-toast");
 
-  const chips = $("#gi-editor-chips");
-  const txtArea = $("#gi-editor-text");
-  const linkInput = $("#gi-editor-link");
-  const htmlArea = $("#gi-editor-html");
-  const addArea = $("#gi-editor-add");
-  const btnInsertInside = $("#gi-editor-insert-inside");
-  const btnInsertAfter = $("#gi-editor-insert-after");
-  const btnDup = $("#gi-editor-duplicate");
-  const btnDel = $("#gi-editor-delete");
-  const btnUndo = $("#gi-editor-undo");
-  const btnRedo = $("#gi-editor-redo");
-  const btnSaveWith = $("#gi-editor-save-with");
-  const btnSaveWithout = $("#gi-editor-save-without");
-
-  // Avoid selecting editor UI itself
-  const EDITOR_ROOT_IDS = new Set([
-    "gi-editor-toggle","gi-editor-ui","gi-editor-overlay","gi-editor-toast"
-  ]);
-
-  let enabled = false;
-  let selected = null;
-
-  // Simple undo/redo stacks (element-level)
-  const undoStack = [];
-  const redoStack = [];
-  const MAX_STACK = 60;
-
-  function showToast(msg){
-    if(!toast) return;
-    toast.textContent = msg;
-    toast.classList.add("show");
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(()=>toast.classList.remove("show"), 1600);
-  }
-
-  function isEditorEl(el){
-    if(!el || el === document.documentElement) return false;
-    if(el.id && EDITOR_ROOT_IDS.has(el.id)) return true;
-    return !!el.closest && (
-      el.closest("#gi-editor-ui") || el.closest("#gi-editor-toggle") ||
-      el.closest("#gi-editor-overlay") || el.closest("#gi-editor-toast")
-    );
-  }
-
-  function getPath(el){
-    try{
-      if(!el) return "";
-      if(el.id) return `#${el.id}`;
-      const cls = (el.className && typeof el.className==="string") ? el.className.trim().split(/\s+/).slice(0,2).join(".") : "";
-      return el.tagName.toLowerCase() + (cls? "."+cls:"");
-    }catch(e){ return "element"; }
-  }
-
-  function setChips(el){
-    if(!chips) return;
-    chips.innerHTML = "";
-    if(!el){
-      chips.innerHTML = `<span class="chip">لا يوجد عنصر محدد</span>`;
-      return;
-    }
-    const a = document.createElement("span");
-    a.className="chip";
-    a.textContent = getPath(el);
-    chips.appendChild(a);
-
-    const b = document.createElement("span");
-    b.className="chip";
-    b.textContent = el.tagName.toLowerCase();
-    chips.appendChild(b);
-
-    if(el.id){
-      const c = document.createElement("span");
-      c.className="chip";
-      c.textContent = "id: "+el.id;
-      chips.appendChild(c);
-    }
-  }
-
-  function rectFor(el){
-    const r = el.getBoundingClientRect();
-    return {
-      x: r.left,
-      y: r.top,
-      w: r.width,
-      h: r.height
-    };
-  }
-
-  function updateOverlay(){
-    if(!enabled || !selected){ overlay.classList.remove("show"); return; }
-    const r = rectFor(selected);
-    overlay.style.left = r.x + "px";
-    overlay.style.top = r.y + "px";
-    overlay.style.width = r.w + "px";
-    overlay.style.height = r.h + "px";
-    overlay.classList.add("show");
-  }
-
-  function pushUndo(entry){
-    undoStack.push(entry);
-    if(undoStack.length > MAX_STACK) undoStack.shift();
-    redoStack.length = 0;
-    btnUndo && (btnUndo.disabled = undoStack.length===0);
-    btnRedo && (btnRedo.disabled = redoStack.length===0);
-  }
-
-  function snapshot(el){
-    return {
-      el,
-      html: el.innerHTML,
-      text: el.textContent,
-      style: el.getAttribute("style"),
-      attrs: Array.from(el.attributes).map(a=>[a.name,a.value])
-    };
-  }
-
-  function restore(snap){
-    const el = snap.el;
-    if(!el || !el.isConnected) return;
-    // restore attributes
-    Array.from(el.attributes).forEach(a=>{
-      if(a.name.startsWith("data-gi-")) return;
-      if(a.name==="contenteditable") return;
-      if(a.name==="spellcheck") return;
-      el.removeAttribute(a.name);
-    });
-    snap.attrs.forEach(([n,v])=>{
-      if(n.startsWith("data-gi-")) return;
-      if(n==="contenteditable") return;
-      if(n==="spellcheck") return;
-      el.setAttribute(n,v);
-    });
-    if(snap.style==null) el.removeAttribute("style");
-    else el.setAttribute("style", snap.style);
-    el.innerHTML = snap.html;
-  }
-
-  function selectEl(el){
-    selected = el;
-    setChips(el);
-
-    if(!el){
-      txtArea.value = "";
-      linkInput.value = "";
-      htmlArea.value = "";
-      updateOverlay();
-      return;
-    }
-
-    // Populate fields
-    const tag = el.tagName.toLowerCase();
-    htmlArea.value = el.outerHTML;
-
-    // Text (for elements that can hold text)
-    if(tag === "img" || tag === "svg" || tag === "path"){
-      txtArea.value = "";
-    }else{
-      txtArea.value = (el.textContent || "").trim();
-    }
-
-    // Link/src helper
-    let linkVal = "";
-    if(tag === "a") linkVal = el.getAttribute("href") || "";
-    else if(tag === "img") linkVal = el.getAttribute("src") || "";
-    else{
-      // background-image url
-      const bg = (el.style && el.style.backgroundImage) ? el.style.backgroundImage : "";
-      if(bg && bg.includes("url(")) linkVal = bg.replace(/^url\(["']?/,"").replace(/["']?\)$/,"");
-    }
-    linkInput.value = linkVal;
-
-    updateOverlay();
-  }
-
-  function enableEditor(on){
-    enabled = !!on;
-    toggleBtn.classList.toggle("on", enabled);
-    ui.classList.toggle("show", enabled);
-    statusEl.textContent = enabled ? "مفعلة — اختر أي عنصر" : "غير مفعلة";
-    if(!enabled){
-      overlay.classList.remove("show");
-      selectEl(null);
-    }
-  }
-
-  // Toggle
-  toggleBtn.addEventListener("click", ()=>{
-    enableEditor(!enabled);
-    showToast(enabled ? "تم تفعيل أداة التعديل" : "تم إيقاف أداة التعديل");
-  });
-  closeBtn.addEventListener("click", ()=>enableEditor(false));
-
-  // Drag panel
-  (function(){
-    const bar = $("#gi-editor-drag");
-    if(!bar) return;
-    let drag=false, sx=0, sy=0, ox=0, oy=0;
-    bar.addEventListener("mousedown", (e)=>{
-      if(e.target && e.target.id==="gi-editor-close") return;
-      drag=true;
-      const r = ui.getBoundingClientRect();
-      sx=e.clientX; sy=e.clientY;
-      ox=r.left; oy=r.top;
-      ui.style.left = ox+"px";
-      ui.style.top = oy+"px";
-      ui.style.right = "auto";
-      ui.style.bottom = "auto";
-      ui.style.position = "fixed";
-      e.preventDefault();
-    });
-    window.addEventListener("mousemove",(e)=>{
-      if(!drag) return;
-      const nx = ox + (e.clientX - sx);
-      const ny = oy + (e.clientY - sy);
-      ui.style.left = Math.max(8, Math.min(nx, window.innerWidth - ui.offsetWidth - 8)) + "px";
-      ui.style.top  = Math.max(8, Math.min(ny, window.innerHeight - ui.offsetHeight - 8)) + "px";
-    });
-    window.addEventListener("mouseup",()=>drag=false);
-  })();
-
-  // Selecting elements
-  document.addEventListener("mousedown", (e)=>{
-    if(!enabled) return;
-    const el = e.target;
-    if(isEditorEl(el)) return;
-    if(!el || el === document.body || el === document.documentElement) return;
-    selectEl(el);
-  }, true);
-
-  // Inline text edit (double click)
-  document.addEventListener("dblclick", (e)=>{
-    if(!enabled) return;
-    const el = e.target;
-    if(isEditorEl(el)) return;
-    if(!el || el.tagName.toLowerCase()==="img") return;
-
-    const before = snapshot(el);
-    el.setAttribute("contenteditable", "true");
-    el.setAttribute("spellcheck", "false");
-    el.focus();
-
-    const done = ()=>{
-      el.removeAttribute("contenteditable");
-      el.removeAttribute("spellcheck");
-      const after = snapshot(el);
-      pushUndo({type:"edit", before, after});
-      selectEl(el);
-    };
-    el.addEventListener("blur", done, {once:true});
-  }, true);
-
-  // Update overlay on scroll/resize
-  window.addEventListener("scroll", ()=>updateOverlay(), {passive:true});
-  window.addEventListener("resize", ()=>updateOverlay(), {passive:true});
-
-  // Apply text from textarea
-  txtArea.addEventListener("input", ()=>{
-    if(!enabled || !selected) return;
-    const tag = selected.tagName.toLowerCase();
-    if(tag === "img") return;
-    const before = snapshot(selected);
-    selected.textContent = txtArea.value;
-    const after = snapshot(selected);
-    pushUndo({type:"text", before, after});
-    selectEl(selected);
-  });
-
-  // Apply link/src
-  linkInput.addEventListener("change", ()=>{
-    if(!enabled || !selected) return;
-    const before = snapshot(selected);
-    const tag = selected.tagName.toLowerCase();
-    const v = linkInput.value.trim();
-    if(tag === "a"){
-      if(v) selected.setAttribute("href", v);
-      else selected.removeAttribute("href");
-    }else if(tag === "img"){
-      if(v) selected.setAttribute("src", v);
-      else selected.removeAttribute("src");
-    }else{
-      if(v) selected.style.backgroundImage = `url("${v}")`;
-      else selected.style.backgroundImage = "";
-    }
-    const after = snapshot(selected);
-    pushUndo({type:"attr", before, after});
-    selectEl(selected);
-    showToast("تم التحديث");
-  });
-
-  // Apply HTML (outerHTML replace)
-  htmlArea.addEventListener("change", ()=>{
-    if(!enabled || !selected) return;
-    const v = htmlArea.value.trim();
-    if(!v) return;
-    const beforeEl = selected;
-    const before = snapshot(beforeEl);
-    try{
-      const tmp = document.createElement("div");
-      tmp.innerHTML = v;
-      const newEl = tmp.firstElementChild;
-      if(!newEl) return;
-      beforeEl.replaceWith(newEl);
-      const after = snapshot(newEl);
-      pushUndo({type:"replace", before, after});
-      selectEl(newEl);
-      showToast("تم تطبيق HTML");
-    }catch(err){
-      showToast("تعذر تطبيق HTML");
-    }
-  });
-
-  // Add HTML
-  function insertHTML(where){
-    if(!enabled || !selected) return;
-    const v = addArea.value.trim();
-    if(!v) return;
-    const before = snapshot(selected);
-    try{
-      if(where==="inside"){
-        selected.insertAdjacentHTML("beforeend", v);
-      }else if(where==="after"){
-        selected.insertAdjacentHTML("afterend", v);
-      }
-      const after = snapshot(selected);
-      pushUndo({type:"insert", before, after});
-      selectEl(selected);
-      showToast("تمت الإضافة");
-    }catch(e){
-      showToast("تعذر إضافة العنصر");
-    }
-  }
-  btnInsertInside.addEventListener("click", ()=>insertHTML("inside"));
-  btnInsertAfter.addEventListener("click", ()=>insertHTML("after"));
-
-  // Duplicate
-  btnDup.addEventListener("click", ()=>{
-    if(!enabled || !selected) return;
-    const before = snapshot(selected);
-    const clone = selected.cloneNode(true);
-    selected.insertAdjacentElement("afterend", clone);
-    const after = snapshot(clone);
-    pushUndo({type:"dup", before, after});
-    selectEl(clone);
-    showToast("تم النسخ");
-  });
-
-  // Delete
-  btnDel.addEventListener("click", ()=>{
-    if(!enabled || !selected) return;
-    const el = selected;
-    const parent = el.parentElement;
-    if(!parent) return;
-    const before = snapshot(el);
-    const ph = document.createComment("gi-deleted");
-    parent.insertBefore(ph, el);
-    el.remove();
-    pushUndo({type:"del", before, after:{placeholder:ph}});
-    selectEl(null);
-    overlay.classList.remove("show");
-    showToast("تم الحذف");
-  });
-
-  // Undo/Redo
-  function doUndo(){
-    const op = undoStack.pop();
-    if(!op) return;
-    redoStack.push(op);
-    btnUndo && (btnUndo.disabled = undoStack.length===0);
-    btnRedo && (btnRedo.disabled = redoStack.length===0);
-
-    if(op.type==="del" && op.after && op.after.placeholder){
-      // restore deleted element
-      const ph = op.after.placeholder;
-      if(ph && ph.parentNode){
-        const tmp = document.createElement("div");
-        tmp.innerHTML = op.before.html ? `<div data-gi-wrap="1">${op.before.html}</div>` : "";
-        // best effort: recreate element from before snapshot outerHTML (we stored innerHTML only). fallback: no
-      }
-      // we cannot fully restore without outerHTML, so keep simple message
-      showToast("تراجع جزئي (حذف)");
-      return;
-    }
-    if(op.before && op.before.el && op.before.el.isConnected){
-      restore(op.before);
-      selectEl(op.before.el);
-      updateOverlay();
-      return;
-    }
-    if(op.type==="replace" && op.after && op.after.el && op.after.el.isConnected){
-      // replace back to before by setting innerHTML+attrs on current element
-      restore(op.before);
-      selectEl(op.before.el);
-      updateOverlay();
-      return;
-    }
-    showToast("تم التراجع");
-  }
-  function doRedo(){
-    const op = redoStack.pop();
-    if(!op) return;
-    undoStack.push(op);
-    btnUndo && (btnUndo.disabled = undoStack.length===0);
-    btnRedo && (btnRedo.disabled = redoStack.length===0);
-
-    if(op.after && op.after.el && op.after.el.isConnected){
-      restore(op.after);
-      selectEl(op.after.el);
-      updateOverlay();
-      showToast("تمت الإعادة");
-      return;
-    }
-    showToast("إعادة جزئية");
-  }
-  btnUndo.addEventListener("click", doUndo);
-  btnRedo.addEventListener("click", doRedo);
-  btnUndo.disabled = true; btnRedo.disabled = true;
-
-  // Move/Resize
-  (function(){
-    let mode=null; // "move" or "resize"
-    let handle=null;
-    let startX=0,startY=0;
-    let baseRect=null;
-    let baseTx=0,baseTy=0;
-
-    function getTranslate(el){
-      const tx = parseFloat(el.dataset.giTx || "0") || 0;
-      const ty = parseFloat(el.dataset.giTy || "0") || 0;
-      return {tx,ty};
-    }
-    function setTranslate(el, tx, ty){
-      el.dataset.giTx = String(tx);
-      el.dataset.giTy = String(ty);
-      el.style.transform = `translate(${tx}px, ${ty}px)`;
-    }
-
-    function onDown(e){
-      if(!enabled || !selected) return;
-      if(isEditorEl(e.target)) return;
-
-      // If clicked overlay handle -> resize
-      const h = e.target && e.target.dataset ? e.target.dataset.h : null;
-      if(h){
-        mode="resize"; handle=h;
-      }else{
-        // move when mouse down on overlay border area
-        if(e.target === overlay) mode="move";
-        else return;
-      }
-
-      const before = snapshot(selected);
-      selected.dataset.giLastBefore = JSON.stringify({}); // marker
-
-      startX = e.clientX; startY = e.clientY;
-      baseRect = rectFor(selected);
-      const t = getTranslate(selected);
-      baseTx = t.tx; baseTy = t.ty;
-
-      function onMove(ev){
-        if(!mode) return;
-        const dx = ev.clientX - startX;
-        const dy = ev.clientY - startY;
-
-        if(mode==="move"){
-          setTranslate(selected, baseTx + dx, baseTy + dy);
-          updateOverlay();
-        }else if(mode==="resize"){
-          // apply width/height
-          const style = selected.style;
-          const w0 = baseRect.w, h0 = baseRect.h;
-
-          let w = w0, h2 = h0;
-          if(handle.includes("e")) w = Math.max(10, w0 + dx);
-          if(handle.includes("w")) w = Math.max(10, w0 - dx);
-          if(handle.includes("s")) h2= Math.max(10, h0 + dy);
-          if(handle.includes("n")) h2= Math.max(10, h0 - dy);
-
-          style.width = w + "px";
-          style.height = h2 + "px";
-          updateOverlay();
-        }
-      }
-      function onUp(){
-        window.removeEventListener("mousemove", onMove);
-        window.removeEventListener("mouseup", onUp);
-        const after = snapshot(selected);
-        pushUndo({type:"transform", before, after});
-        mode=null; handle=null;
-        selectEl(selected);
-      }
-
-      window.addEventListener("mousemove", onMove);
-      window.addEventListener("mouseup", onUp);
-      e.preventDefault();
-    }
-
-    overlay.addEventListener("mousedown", onDown);
-    $$("#gi-editor-overlay .h").forEach(h=>{
-      h.addEventListener("mousedown", onDown);
-    });
-  })();
-
-  // Save helpers
-  function download(name, text){
-    const blob = new Blob([text], {type:"text/html;charset=utf-8"});
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = name;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(()=>URL.revokeObjectURL(a.href), 1500);
-  }
-
-  function stripEditorFromDoc(doc){
-    // remove editor DOM
-    ["gi-editor-toggle","gi-editor-ui","gi-editor-overlay","gi-editor-toast"].forEach(id=>{
-      const el = doc.getElementById(id);
-      if(el) el.remove();
-    });
-    // remove editor CSS (dedicated tag)
-    const edStyle = doc.getElementById("gi-editor-style");
-    if(edStyle) edStyle.remove();
-    // remove editor script tag by id
-    const scr = doc.getElementById("gi-site-editor-v8");
-    if(scr) scr.remove();
-
-    // cleanup editable artifacts
-    Array.from(doc.querySelectorAll("[contenteditable]")).forEach(el=>{
-      el.removeAttribute("contenteditable");
-      el.removeAttribute("spellcheck");
-    });
-    // remove dataset keys
-    Array.from(doc.querySelectorAll("[data-gi-tx],[data-gi-ty]")).forEach(el=>{
-      el.removeAttribute("data-gi-tx");
-      el.removeAttribute("data-gi-ty");
-    });
-    return doc;
-  }
-
-  function save(withEditor){
-    const clone = document.documentElement.cloneNode(true);
-    const doc = document.implementation.createHTMLDocument("copy");
-    doc.replaceChild(doc.importNode(clone, true), doc.documentElement);
-
-    if(!withEditor){
-      stripEditorFromDoc(doc);
-    }
-
-    const out = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
-    const base = (document.title || "site").replace(/[\\\/:*?"<>|]+/g,"-");
-    const suffix = withEditor ? "_with-editor" : "_clean";
-    download(base + suffix + ".html", out);
-    showToast(withEditor ? "تم حفظ نسخة مع الأداة" : "تم حفظ نسخة بدون الأداة");
-  }
-
-  btnSaveWith.addEventListener("click", ()=>save(true));
-  btnSaveWithout.addEventListener("click", ()=>save(false));
-
-  // Start disabled
-  enableEditor(false);
-})();
-
-</script>
-</body>
-</html>
+</body></html>
